@@ -15,20 +15,19 @@ PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Te
     this->alpha = 2 * D * dt / pow(dx, 2);
     this->nspace = L / dx;
     this->ntime = T / dt;
-
+    
     // Initialisation with boudary conditions
     for (int i = 0; i < nspace; i++)
     {
-        this->results[0][i] = Tint;
-        this->results[1][i] = Tint;
+        results[0][i] = Tint;
     }
     for (int i = 0; i < ntime; i++)
     {
-        this->results[i][0] = Text;
-        this->results[i][nspace - 1] = Text;
+        results[i][0] = Text;
+        results[i][nspace - 1] = Text;
     }
 }
-double **PDESolve::get_res() const
+Matrix PDESolve::get_res() const
 {
     return this->results;
 }
@@ -50,5 +49,5 @@ DufortFrankelSolve::DufortFrankelSolve(double D, double dx, double dt, double L,
 
 double DufortFrankelSolve::advance(int k, int l) const
 {
-    return ((1 - alpha) / (1 + alpha)) * results[k][l+1] + (alpha / (1 + alpha)) * (results[k+1][l+2] + results[k+1][l]);
+    return ((1 - this->alpha) / (1 + this->alpha)) * results[k][l+1] + (this->alpha / (1 + this->alpha)) * (results[k+1][l+2] + results[k+1][l]);
 }

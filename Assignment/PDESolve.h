@@ -16,14 +16,14 @@ protected:
   double alpha;
   int nspace;
   int ntime;
-  double **results;
+  Matrix results;
 
 public:
   PDESolve();
   PDESolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
   virtual double advance(int k, int l) const = 0;
   void solve();
-  double **get_res() const;
+  Matrix get_res() const;
 };
 
 class DufortFrankelSolve : public PDESolve
