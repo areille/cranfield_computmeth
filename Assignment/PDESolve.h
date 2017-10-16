@@ -8,47 +8,52 @@ class PDESolve
 protected:
   double Text;
   double Tint;
-  Matrix m;
   double D;
   double dx; // length step
   double dt; // time step
   double L;  // total length
   double T;  // total time
+  double alpha;
+  int nspace;
+  int ntime;
+  double **results;
+
 public:
   PDESolve();
-  PDESolve(Matrix m, double D, double dx, double dt, double L, double T, double Text, double Tint);
-  Matrix getMatrix() const;
-  virtual double advance(int k) const = 0;
+  PDESolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
+  virtual double advance(int k, int l) const = 0;
+  void solve();
+  double **get_res() const;
 };
 
 class DufortFrankelSolve : public PDESolve
 {
 public:
   DufortFrankelSolve();
-  DufortFrankelSolve(Matrix m, double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k) const;
+  DufortFrankelSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
+  virtual double advance(int k, int l) const;
 };
 
 class RichardsonSolve : public PDESolve
 {
 public:
   RichardsonSolve();
-  RichardsonSolve(Matrix m, double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k) const;
+  RichardsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
+  virtual double advance(int k, int l) const;
 };
 
 class LaasonenSolve : public PDESolve
 {
 public:
   LaasonenSolve();
-  LaasonenSolve(Matrix m, double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k) const;
-  std::cout << "Coucou" << endl;
+  LaasonenSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
+  virtual double advance(int k, int l) const;
 };
 
 class CrankNicholsonSolve : public PDESolve
 {
 public:
   CrankNicholsonSolve();
-  CrankNicholsonSolve(Matrix m, double D, double dx, double dt, double L, double T, double Text, double Tint);
+  CrankNicholsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
+  virtual double advance(int k, int l) const;
 };

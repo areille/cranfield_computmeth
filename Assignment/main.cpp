@@ -10,6 +10,25 @@ int main()
 {  
     std::cout << "Hello world !" << std::endl;
     
+    // Initialization
+    int Tint = 100;
+    int Text = 200;
+    double dx = 0.05;
+    double dt = 0.01;
+    double L = 1.0;
+    double T = 1.0;
+    double D = 0.1;
+    int ntime = T/dt;
+    int nspace = L/dx;
+
+    // double results[ntime][nspace];
+    double ** results;
+
+    vector<PDESolve *> vect(1); // 1 for the moment (dufort frkl)
+    vect[0] = new DufortFrankelSolve(D, dx, dt, L, T, Text, Tint);
+    vect[0]->solve();
+
+    results = vect[0]->get_res();
 
     return 0;
 }
@@ -36,11 +55,12 @@ int main()
     // for (int i = 0; i < ntime; i++)
     // {
     //     results[i][0] = Tsur;
+    //     results[i][1] = Tsur;
     //     results[i][nspace - 1] = Tsur;
     // }
 
-    // // TODO
-    // // n = 1 !!!
+    // TODO
+    // n = 1 !!!
 
     // // numerical results :
     // for (int n = 2; n < ntime; n++)
