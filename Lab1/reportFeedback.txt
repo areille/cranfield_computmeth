@@ -1,0 +1,10 @@
+1. The contents should be separate from the abstract
+2. The abstarct could be improved. Provide additional details.
+3. Don't use LaTex template with chapters, if the report is small.
+4. Explain the mathematical symbols used in the numerical equation.
+5. Provide details of the physical problem that is being solved in the report.
+6. Figures could be improved. Always include a legend. This grid layout is not appropriate for this figure. Increase the font size in the figure.
+7. Results need more explaination. e.g. What is observed in the results? What is the reason behind the observation.
+8. Conclusion could be improved with greater analysis of the results.
+9. The code in the appendix should be complemented with the implementation of the numerical scheme.
+10. Report needs more details.
