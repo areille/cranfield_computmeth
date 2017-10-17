@@ -13,18 +13,25 @@ PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Te
     this->Tint = Tint;
 
     this->alpha = 2 * D * dt / pow(dx, 2);
+    this->r = D * dt / pow(dx, 2);
     this->nspace = L / dx;
     this->ntime = T / dt;
-    
+    this->results = Matrix(this->ntime, this->nspace);
+
     // Initialisation with boudary conditions
     for (int i = 0; i < nspace; i++)
     {
         results[0][i] = Tint;
     }
-    for (int i = 0; i < ntime; i++)
+    for (int n = 0; n < ntime; n++)
     {
-        results[i][0] = Text;
-        results[i][nspace - 1] = Text;
+        results[n][0] = Text;
+        results[n][nspace - 1] = Text;
+    }
+    for (int i = 0; i < nspace; i++)
+    {
+        // using an order one scheme to find n = 1
+        this->results[1][i] = this->r * (this->results[0][i + 1] + this->results[0][i - 1]) + (1 - 2 * this->r) * this->results[0][i];
     }
 }
 Matrix PDESolve::get_res() const
@@ -34,20 +41,20 @@ Matrix PDESolve::get_res() const
 
 void PDESolve::solve()
 {
-    for (int n = 2; n <= this->ntime + 1; n++)
+    for (int n = 2; n <= this->ntime; n++)
     {
         for (int i = 1; i <= this->nspace - 1; i++)
         {
-            advance(n - 2, i - 1);
+            this->results[n][i] = advance(n - 2, i - 1);
         }
     }
 }
 
 DufortFrankelSolve::DufortFrankelSolve() {}
 
-DufortFrankelSolve::DufortFrankelSolve(double D, double dx, double dt, double L, double T, double Text, double Tint) : PDESolve(D, dx, dt, L, T, Text, Tint){}
+DufortFrankelSolve::DufortFrankelSolve(double D, double dx, double dt, double L, double T, double Text, double Tint) : PDESolve(D, dx, dt, L, T, Text, Tint) {}
 
 double DufortFrankelSolve::advance(int k, int l) const
 {
-    return ((1 - this->alpha) / (1 + this->alpha)) * results[k][l+1] + (this->alpha / (1 + this->alpha)) * (results[k+1][l+2] + results[k+1][l]);
+    return ((1 - this->alpha) / (1 + this->alpha)) * this->results[k][l + 1] + (this->alpha / (1 + this->alpha)) * (this->results[k + 1][l + 2] + this->results[k + 1][l]);
 }

@@ -14,6 +14,7 @@ protected:
   double L;  // total length
   double T;  // total time
   double alpha;
+  double r;
   int nspace;
   int ntime;
   Matrix results;
