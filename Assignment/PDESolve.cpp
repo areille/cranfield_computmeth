@@ -17,6 +17,7 @@ PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Te
     this->nspace = L / dx;
     this->ntime = T / dt;
     this->results = Matrix(this->ntime, this->nspace);
+    
 
     // Initialisation with boudary conditions
     for (int i = 0; i < nspace; i++)
