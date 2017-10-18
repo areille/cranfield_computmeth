@@ -58,5 +58,18 @@ DufortFrankelSolve::DufortFrankelSolve(double D, double dx, double dt, double L,
 
 double DufortFrankelSolve::advance(int k, int l) const
 {
-    return ((1 - this->alpha) / (1 + this->alpha)) * this->results[k][l + 1] + (this->alpha / (1 + this->alpha)) * (this->results[k + 1][l + 2] + this->results[k + 1][l]);
+    return (
+        (1 - this->alpha) / (1 + this->alpha)) * this->results[k][l + 1] + (this->alpha / (1 + this->alpha)) * (this->results[k + 1][l + 2] + this->results[k + 1][l]
+    );
+}
+
+RichardsonSolve::RichardsonSolve(){}
+
+RichardsonSolve::RichardsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint) : PDESolve(D, dx, dt, L, T, Text, Tint) {}
+
+double RichardsonSolve::advance(int k, int l) const
+{
+    return (
+        this->results[k][l + 1] + this->alpha * (this->results[k + 1][l] - 2 * this->results[k+1][l+1] + this->results[k+1][l+2])
+    );
 }

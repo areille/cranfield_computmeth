@@ -19,13 +19,20 @@ int main()
     int nspace = L / dx;
 
     Matrix DFresults(nspace, ntime);
+    Matrix Richresults(nspace, ntime);
 
-    vector<PDESolve *> vect(1); // 1 for the moment (dufort frkl)
+    vector<PDESolve *> vect(2);
     vect[0] = new DufortFrankelSolve(D, dx, dt, L, T, Text, Tint);
+    vect[1] = new RichardsonSolve(D, dx, dt, L, T, Text, Tint);
+
     vect[0]->solve();
+    vect[1]->solve();
 
     DFresults = vect[0]->get_res();
+    Richresults = vect[1]->get_res();
+
     std::cout << DFresults << std::endl;
+    std::cout << Richresults << std::endl;
 
     return 0;
 }
