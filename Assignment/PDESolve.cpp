@@ -32,6 +32,9 @@ PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Te
     {
         // using an order one scheme to find n = 1
         this->results[1][i] = this->r * (this->results[0][i + 1] + this->results[0][i - 1]) + (1 - 2 * this->r) * this->results[0][i];
+        this->results[1][0] = Text;
+        this->results[1][nspace - 1] = Text;
+        
     }
 }
 Matrix PDESolve::get_res() const
@@ -41,7 +44,7 @@ Matrix PDESolve::get_res() const
 
 void PDESolve::solve()
 {
-    for (int n = 2; n <= this->ntime; n++)
+    for (int n = 2; n < this->ntime; n++)
     {
         for (int i = 1; i <= this->nspace - 1; i++)
         {

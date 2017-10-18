@@ -7,8 +7,6 @@
 
 int main()
 {
-    std::cout << "Hello world !" << std::endl;
-
     // Initialization
     int Tint = 100;
     int Text = 300;
@@ -20,13 +18,14 @@ int main()
     int ntime = T / dt;
     int nspace = L / dx;
 
-    Matrix results(nspace, ntime);
+    Matrix DFresults(nspace, ntime);
 
     vector<PDESolve *> vect(1); // 1 for the moment (dufort frkl)
     vect[0] = new DufortFrankelSolve(D, dx, dt, L, T, Text, Tint);
     vect[0]->solve();
 
-    results = vect[0]->get_res();
+    DFresults = vect[0]->get_res();
+    std::cout << DFresults << std::endl;
 
     return 0;
 }
