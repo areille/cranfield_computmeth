@@ -5,6 +5,19 @@
 #include "PDESolve.h"
 #define PI 3.141592
 
+double calculateSum(int max_m, double D, double L, double t, double x)
+{
+    double sum = 0.0;
+    for (int m = 1; m < max_m; m++)
+    {
+        double term_1 = -D * (m * PI / L) * (m * PI / L) * t;
+        double term_2 = (1 - pow(-1, m)) / (m * PI);
+        double term_3 = m * PI * x / L;
+        sum += exp(term_1) * term_2 * sin(term_3);
+    }
+    return sum;
+}
+
 int main()
 {
     // Initialization
@@ -18,8 +31,8 @@ int main()
     int ntime = T / dt;
     int nspace = L / dx;
 
-    Matrix DFresults(nspace, ntime);
-    Matrix Richresults(nspace, ntime);
+    Matrix DFresults(ntime, nspace);
+    Matrix Richresults(ntime, nspace);
 
     vector<PDESolve *> vect(2);
     vect[0] = new DufortFrankelSolve(D, dx, dt, L, T, Text, Tint);
@@ -31,8 +44,26 @@ int main()
     DFresults = vect[0]->get_res();
     Richresults = vect[1]->get_res();
 
+    // Calculation of analytical results
+    Matrix Anaresults(ntime, nspace + 1);
+
+    for (int n = 0; n < ntime; n++)
+    {
+        for (int i = 0; i < nspace + 1; i++)
+        {
+            double x = i * dx;
+            double t = n * dt;
+            double sum = 0.0;
+
+            sum = calculateSum(1000, D, L, t, x);
+
+            Anaresults[n][i] = Text + 2 * (Tint - Text) * sum;
+        }
+    }
+
     std::cout << DFresults << std::endl;
     std::cout << Richresults << std::endl;
+    std::cout << Anaresults << std::endl;
 
     return 0;
 }
