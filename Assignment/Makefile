@@ -1,7 +1,7 @@
 CC= g++
 CFLAGS= -c -Wall
 LDFLAGS=
-SOURCES= main.cpp vector.cpp matrix.cpp PDESolve.cpp PDEExplicit.cpp RichardsonSolve.cpp DufortFrankelSolve.cpp
+SOURCES= main.cpp vector.cpp matrix.cpp PDESolve.cpp PDEExplicit.cpp PDEImplicit.cpp RichardsonSolve.cpp DufortFrankelSolve.cpp LaasonenSolve.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXEC= prog
 
