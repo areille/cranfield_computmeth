@@ -11,7 +11,10 @@ class PDEImplicit : public PDESolve
 {
   protected:
     Matrix A, L, U;
+    vector<double> B, X;
+    double C;
     void lu_fact();
+    void lu_solve();
 
   public:
     PDEImplicit() : PDESolve(){};

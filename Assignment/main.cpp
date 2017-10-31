@@ -4,6 +4,7 @@
 #include "matrix.h"
 #include "DufortFrankelSolve.h"
 #include "RichardsonSolve.h"
+#include "LaasonenSolve.h"
 #define PI 3.141592
 
 double calculateSum(int max_m, double D, double L, double t, double x)
@@ -34,16 +35,20 @@ int main()
 
     Matrix DFresults(ntime, nspace);
     Matrix Richresults(ntime, nspace);
+    Matrix Laasresults(ntime, nspace);
 
     vector<PDESolve *> vect(2);
     vect[0] = new DufortFrankelSolve(D, dx, dt, L, T, Text, Tint);
     vect[1] = new RichardsonSolve(D, dx, dt, L, T, Text, Tint);
+    vect[2] = new LaasonenSolve(D, dx, dt, L, T, Text, Tint);
 
     vect[0]->solve();
     vect[1]->solve();
+    vect[2]->solve();
 
     DFresults = vect[0]->get_res();
     Richresults = vect[1]->get_res();
+    Laasresults = vect[2]->get_res();
 
     // Calculation of analytical results
     Matrix Anaresults(ntime, nspace + 1);
@@ -66,9 +71,10 @@ int main()
     std::cout << DFresults << std::endl;
     std::cout << "Results with the Richardson method" << std::endl;
     std::cout << Richresults << std::endl;
+    std::cout << "Results with the Laasonen method" << std::endl;
+    std::cout << Laasresults << std::endl;
     std::cout << "Analytical results" << std::endl;
     std::cout << Anaresults << std::endl;
 
     return 0;
 }
-
