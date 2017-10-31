@@ -45,21 +45,26 @@ void PDEImplicit::lu_fact()
 
 void PDEImplicit::lu_solve()
 {
-    vector<double> temp(this->nspace);
+    vector<double> temp(nspace);
     int i, j;
-    temp = this->B;
-    for (i = 0; i < this->nspace; i++)
-        for (j = 0; j < i; j++)
-            temp[i] -= this->L[i][j] * temp[j];
-
-    for (i = this->nspace - 1; i >= 0; i--)
+    temp = B;
+    temp[1] += C * temp[0];
+    temp[nspace - 2] += C * temp[nspace - 1];
+    for (i = 0; i < nspace - 2; i++)
     {
-        for (j = i + 1; j < this->nspace; j++)
-            temp[i] -= this->U[i][j] * temp[j];
-        temp[i] /= this->U[i][i];
+        for (j = 0; j < i; j++)
+        {
+            temp[i + 1] -= L[i][j] * temp[j+1];
+        }
     }
-    for (i = 0; i < this->nspace; i++)
-        this->X[i] = temp[i];
+
+    for (i = nspace - 3; i >= 0; i--)
+    {
+        for (j = i + 1; j < nspace - 2; j++)
+            temp[i + 1] -= U[i][j] * temp[j + 1];
+        temp[i+1] /= U[i][i];
+    }
+    this->X = temp;
 }
 
 void PDEImplicit::solve()
@@ -81,6 +86,7 @@ void PDEImplicit::solve()
     }
     // creation of vector B
     this->B = this->results[0];
+    this->X = this->B;
     lu_fact();
     for (int n = 2; n < this->ntime; n++)
     {

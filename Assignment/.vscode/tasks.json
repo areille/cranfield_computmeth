@@ -12,7 +12,12 @@
                 "main.cpp",
                 "matrix.cpp",
                 "PDESolve.cpp",
-                "vector.cpp"
+                "vector.cpp",
+                "PDEImplicit.cpp",
+                "PDEExplicit.cpp",
+                "DufortFrankelSolve.cpp",
+                "LaasonenSolve.cpp",
+                "RichardsonSolve.cpp"
             ],
             "group": {
                 "kind": "build",

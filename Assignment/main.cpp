@@ -37,7 +37,7 @@ int main()
     Matrix Richresults(ntime, nspace);
     Matrix Laasresults(ntime, nspace);
 
-    vector<PDESolve *> vect(2);
+    vector<PDESolve *> vect(3);
     vect[0] = new DufortFrankelSolve(D, dx, dt, L, T, Text, Tint);
     vect[1] = new RichardsonSolve(D, dx, dt, L, T, Text, Tint);
     vect[2] = new LaasonenSolve(D, dx, dt, L, T, Text, Tint);
