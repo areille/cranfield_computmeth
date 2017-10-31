@@ -1,3 +1,6 @@
+#ifndef PDESOLVE_H
+#define PDESOLVE_H
+
 #include "matrix.h"
 
 using namespace std;
@@ -20,41 +23,11 @@ protected:
   Matrix results;
 
 public:
-  PDESolve();
+  PDESolve(){};
   PDESolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k, int l) const = 0;
-  void solve();
+  // virtual double advance(int k, int l) const = 0;
+  virtual void solve(){};
   Matrix get_res() const;
 };
 
-class DufortFrankelSolve : public PDESolve
-{
-public:
-  DufortFrankelSolve();
-  DufortFrankelSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k, int l) const;
-};
-
-class RichardsonSolve : public PDESolve
-{
-public:
-  RichardsonSolve();
-  RichardsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k, int l) const;
-};
-
-class LaasonenSolve : public PDESolve
-{
-public:
-  LaasonenSolve();
-  LaasonenSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k, int l) const;
-};
-
-class CrankNicholsonSolve : public PDESolve
-{
-public:
-  CrankNicholsonSolve();
-  CrankNicholsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint);
-  virtual double advance(int k, int l) const;
-};
+#endif
