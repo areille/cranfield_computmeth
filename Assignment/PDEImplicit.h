@@ -10,8 +10,8 @@ using namespace std;
 class PDEImplicit : public PDESolve
 {
   protected:
-    Matrix A, L, U;
-    vector<double> B, X;
+    Matrix A, B, L, U;
+    vector<double> X, Y;
     double C;
     void lu_fact();
     void lu_solve();

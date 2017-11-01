@@ -46,7 +46,7 @@ void PDEImplicit::lu_solve()
 {
     vector<double> temp(nspace);
     int i, j;
-    temp = B;
+    temp = X;
     temp[1] += C * temp[0];
     temp[nspace - 2] += C * temp[nspace - 1];
     for (i = 0; i < nspace - 2; i++)
@@ -72,6 +72,7 @@ void PDEImplicit::solve()
     L = Matrix(nspace - 2, nspace - 2);
     U = Matrix(nspace - 2, nspace - 2);
     C = (D * dt) / (dx * dx);
+
     // Creation of matrix A
     for (int i = 0; i < nspace - 2; i++)
     {
@@ -83,14 +84,15 @@ void PDEImplicit::solve()
                 A[i][j] = -C;
         }
     }
-    // creation of vector B
-    B = results[0];
-    X = B; // find smthng better 
+
+    // creation of vector X
+    X = results[0];
+    Y = X; // find smthng better 
     lu_fact();
     for (int n = 2; n < ntime; n++)
     {
         lu_solve();
-        results[n] = X;
-        B = X;
+        results[n] = Y;
+        X = Y;
     }
 }
