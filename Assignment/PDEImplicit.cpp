@@ -46,14 +46,14 @@ void PDEImplicit::lu_solve()
 {
     vector<double> temp(nspace);
     int i, j;
-    temp = X;
+    temp = B;
     temp[1] += C * temp[0];
     temp[nspace - 2] += C * temp[nspace - 1];
     for (i = 0; i < nspace - 2; i++)
     {
         for (j = 0; j < i; j++)
         {
-            temp[i + 1] -= L[i][j] * temp[j+1];
+            temp[i + 1] -= L[i][j] * temp[j + 1];
         }
     }
 
@@ -61,38 +61,21 @@ void PDEImplicit::lu_solve()
     {
         for (j = i + 1; j < nspace - 2; j++)
             temp[i + 1] -= U[i][j] * temp[j + 1];
-        temp[i+1] /= U[i][i];
+        temp[i + 1] /= U[i][i];
     }
     X = temp;
 }
 
 void PDEImplicit::solve()
 {
+    
     A = Matrix(nspace - 2, nspace - 2);
     L = Matrix(nspace - 2, nspace - 2);
     U = Matrix(nspace - 2, nspace - 2);
-    C = (D * dt) / (dx * dx);
 
-    // Creation of matrix A
-    for (int i = 0; i < nspace - 2; i++)
-    {
-        for (int j = 0; j < nspace - 2; j++)
-        {
-            if (i == j)
-                A[i][j] = 1 + 2 * C;
-            if (i == (j + 1) || (j > 0 && i == (j - 1)))
-                A[i][j] = -C;
-        }
-    }
-
-    // creation of vector X
-    X = results[0];
-    Y = X; // find smthng better 
-    lu_fact();
-    for (int n = 2; n < ntime; n++)
-    {
-        lu_solve();
-        results[n] = Y;
-        X = Y;
-    }
+    // init();
+    // lu_fact();
+    
+    advance();
+    
 }

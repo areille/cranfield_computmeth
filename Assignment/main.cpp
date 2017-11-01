@@ -73,8 +73,8 @@ int main()
     std::cout << Richresults << std::endl;
     std::cout << "Results with the Laasonen method" << std::endl;
     std::cout << Laasresults << std::endl;
-    std::cout << "Analytical results" << std::endl;
-    std::cout << Anaresults << std::endl;
+    // std::cout << "Analytical results" << std::endl;
+    // std::cout << Anaresults << std::endl;
 
     return 0;
 }

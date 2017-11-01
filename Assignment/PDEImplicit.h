@@ -10,8 +10,8 @@ using namespace std;
 class PDEImplicit : public PDESolve
 {
   protected:
-    Matrix A, B, L, U;
-    vector<double> X, Y;
+    Matrix A, L, U;
+    vector<double> B, X;
     double C;
     void lu_fact();
     void lu_solve();
@@ -20,7 +20,7 @@ class PDEImplicit : public PDESolve
     PDEImplicit() : PDESolve(){};
     PDEImplicit(double D, double dx, double dt, double L, double T, double Text, double Tint) : PDESolve(D, dx, dt, L, T, Text, Tint){};
     void solve();
-    virtual vector<double> advance(int k) const = 0;
+    virtual void advance(){};
 };
 
 #endif
