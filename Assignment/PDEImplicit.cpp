@@ -5,9 +5,8 @@ void PDEImplicit::lu_fact()
     Matrix temp;
     double mult;
     int i, j, k;
-    int n = this->A.getNcols();
-    // temp = Matrix(this->A.getNrows(), this->A.getNcols());
-    temp = this->A;
+    int n = A.getNcols();
+    temp = A;
     for (k = 0; k < n - 1; k++)
     {
         for (i = k + 1; i < n; i++)
@@ -32,15 +31,15 @@ void PDEImplicit::lu_fact()
     }
     // create L and U from temp
     for (i = 0; i < n; i++)
-        this->L[i][i] = 1.0;
+        L[i][i] = 1.0;
 
     for (i = 1; i < n; i++)
         for (j = 0; j < i; j++)
-            this->L[i][j] = temp[i][j];
+            L[i][j] = temp[i][j];
 
     for (i = 0; i < n; i++)
         for (j = i; j < n; j++)
-            this->U[i][j] = temp[i][j];
+            U[i][j] = temp[i][j];
 }
 
 void PDEImplicit::lu_solve()
@@ -64,34 +63,34 @@ void PDEImplicit::lu_solve()
             temp[i + 1] -= U[i][j] * temp[j + 1];
         temp[i+1] /= U[i][i];
     }
-    this->X = temp;
+    X = temp;
 }
 
 void PDEImplicit::solve()
 {
-    this->A = Matrix(this->nspace - 2, this->nspace - 2);
-    this->L = Matrix(this->nspace - 2, this->nspace - 2);
-    this->U = Matrix(this->nspace - 2, this->nspace - 2);
-    this->C = (this->D * this->dt) / (this->dx * this->dx);
+    A = Matrix(nspace - 2, nspace - 2);
+    L = Matrix(nspace - 2, nspace - 2);
+    U = Matrix(nspace - 2, nspace - 2);
+    C = (D * dt) / (dx * dx);
     // Creation of matrix A
-    for (int i = 0; i < this->nspace - 2; i++)
+    for (int i = 0; i < nspace - 2; i++)
     {
-        for (int j = 0; j < this->nspace - 2; j++)
+        for (int j = 0; j < nspace - 2; j++)
         {
             if (i == j)
-                this->A[i][j] = 1 + 2 * this->C;
+                A[i][j] = 1 + 2 * C;
             if (i == (j + 1) || (j > 0 && i == (j - 1)))
-                this->A[i][j] = -this->C;
+                A[i][j] = -C;
         }
     }
     // creation of vector B
-    this->B = this->results[0];
-    this->X = this->B;
+    B = results[0];
+    X = B; // find smthng better 
     lu_fact();
-    for (int n = 2; n < this->ntime; n++)
+    for (int n = 2; n < ntime; n++)
     {
         lu_solve();
-        this->results[n] = this->X;
-        this->B = this->X;
+        results[n] = X;
+        B = X;
     }
 }
