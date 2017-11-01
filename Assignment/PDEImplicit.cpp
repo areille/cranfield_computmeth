@@ -68,14 +68,14 @@ void PDEImplicit::lu_solve()
 
 void PDEImplicit::solve()
 {
-    
+
     A = Matrix(nspace - 2, nspace - 2);
+    E = Matrix(nspace - 2, nspace - 2);
     L = Matrix(nspace - 2, nspace - 2);
     U = Matrix(nspace - 2, nspace - 2);
 
     // init();
     // lu_fact();
-    
+
     advance();
-    
 }

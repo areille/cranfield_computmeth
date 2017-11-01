@@ -17,7 +17,8 @@
                 "PDEExplicit.cpp",
                 "DufortFrankelSolve.cpp",
                 "LaasonenSolve.cpp",
-                "RichardsonSolve.cpp"
+                "RichardsonSolve.cpp",
+                "CrankNicholsonSolve.cpp"
             ],
             "group": {
                 "kind": "build",
