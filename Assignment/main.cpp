@@ -56,11 +56,11 @@ int main()
     CrankNicholsonResults = vect[3]->get_res();
 
     // Calculation of analytical results
-    Matrix Anaresults(ntime, nspace + 1);
+    Matrix Anaresults(ntime, nspace);
 
     for (int n = 0; n < ntime; n++)
     {
-        for (int i = 0; i < nspace + 1; i++)
+        for (int i = 0; i < nspace; i++)
         {
             double x = i * dx;
             double t = n * dt;
@@ -72,44 +72,44 @@ int main()
         }
     }
 
-    vector<double> dft10 = DFresults[10];
-    vector<double> r10 = Richresults[10];
-    vector<double> las10 = Laasresults[10];
-    vector<double> cr10 = CrankNicholsonResults[10];
-    vector<double> an10 = Anaresults[10];
+    vector<double> dft20 = DFresults[30];
+    vector<double> r20 = Richresults[30];
+    vector<double> las20 = Laasresults[30];
+    vector<double> cr20 = CrankNicholsonResults[30];
+    vector<double> an20 = Anaresults[30];
 
-    std::cout << "Results with the Dufort Frankel method at t = 0.1h" << std::endl;
-    for (int i = 0; i < dft10.size(); i++)
+    std::cout << "Results with the Dufort Frankel method at t = 0.3h" << std::endl;
+    for (int i = 0; i < dft20.size(); i++)
     {
-        std::cout << dft10[i] << ", ";
+        std::cout << dft20[i] << ", ";
     }
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "Results with the Richardson method at t = 0.1h" << std::endl;
-    for (int i = 0; i < r10.size(); i++)
+    std::cout << "Results with the Richardson method at t = 0.3h" << std::endl;
+    for (int i = 0; i < r20.size(); i++)
     {
-        std::cout << r10[i] << ", ";
+        std::cout << r20[i] << ", ";
     }
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "Results with the Laasonen method at t = 0.1h" << std::endl;
-    for (int i = 0; i < las10.size(); i++)
+    std::cout << "Results with the Laasonen method at t = 0.3h" << std::endl;
+    for (int i = 0; i < las20.size(); i++)
     {
-        std::cout << las10[i] << ", ";
+        std::cout << las20[i] << ", ";
     }
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "Results with the Crank Nicholson method at t = 0.1h" << std::endl;
-    for (int i = 0; i < cr10.size(); i++)
+    std::cout << "Results with the Crank Nicholson method at t = 0.3h" << std::endl;
+    for (int i = 0; i < cr20.size(); i++)
     {
-        std::cout << cr10[i] << ", ";
+        std::cout << cr20[i] << ", ";
     }
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "Analytical results at t = 0.1h" << std::endl;
-    for (int i = 0; i < an10.size(); i++)
+    std::cout << "Analytical results at t = 0.3h" << std::endl;
+    for (int i = 0; i < an20.size(); i++)
     {
-        std::cout << an10[i] << ", ";
+        std::cout << an20[i] << ", ";
     }
     // std::cout << Anaresults[10] << std::endl;
 

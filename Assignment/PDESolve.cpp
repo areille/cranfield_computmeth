@@ -14,7 +14,7 @@ PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Te
 
     this->alpha = 2 * D * dt / pow(dx, 2);
     this->r = D * dt / pow(dx, 2);
-    this->nspace = L / dx;
+    this->nspace = L / dx + 1;
     this->ntime = T / dt;
     this->results = Matrix(this->ntime, this->nspace);
 
