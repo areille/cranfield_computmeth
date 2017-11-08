@@ -22,6 +22,11 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "fstream": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "iterator": "cpp",
+        "vector": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "initializer_list": "cpp"
     }
 }
