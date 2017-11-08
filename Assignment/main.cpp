@@ -32,7 +32,7 @@ int main()
     double T = 1.0;
     double D = 0.1;
     int ntime = T / dt;
-    int nspace = L / dx;
+    int nspace = L / dx + 1;
 
     Matrix DFresults(ntime, nspace);
     Matrix Richresults(ntime, nspace);
