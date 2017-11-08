@@ -1,14 +1,16 @@
 \documentclass{report}
 
-\title{Computational Methods & C++ Assignment}
+\usepackage{nomencl}
+\usepackage{blkarray}
+\makeglossary
+
+\title{Computational Methods \& C++ Assignment}
 \author{Augustin Reille}
 \date{2 November 2017}
 
 \begin{document}
     % Title
-    \begin{titlepage}
     \maketitle
-    \end{titlepage}
 
     % Table of contents
     \tableofcontents
@@ -18,21 +20,74 @@
 
     % List of tables
 
-
     % List of abbreviations / Nomenclature
-
 
     % Abstract
     \begin{abstract}
-        In this assignment we were asked to examine the application of numerical schemes
-        for the solution of partial differential equations as discussed in the Computational
-         Methods lectures, using C++ Object Oriented and other programming practices discussed in the C++ lectures.
+        A one-space dimensional problem is considered, to examine the application
+        of numerical schemes for the solution of partial differential equations. 
     \end{abstract}
 
     % Introduction
+    \section*{Introduction}
 
 
     % Methods / Procedures
+    \section*{Methods}
+        Several methods are used :
+        \begin{itemize}
+            \item{Dufort-Frankel}
+            \item{Richardson}
+            \item{Laasonen simple implicit}
+            \item{Crank-Nicholson}
+        \end{itemize}
+        For all of the used schemes, the initialization of the result matrix is run the same way.
+        First the study grid must be chosen. The initials conditions are:
+        \begin{itemize}
+            \item{$T_{int}$ of 100$^{\circ}$F}
+            \item{$T_{sur}$ of 300$^{\circ}$F}
+            \item{$D = 0.1 ft^{2}/hr$}
+        \end{itemize}
+        First it was assumed that $\Delta x = 0.05$ and $\Delta t = 0.01$,
+        so that the result matrix could be initialized.
+        We set:
+        \begin{equation}
+            n_{space} = \frac{L}{\Delta x} + 1
+        \end{equation}
+        \begin{equation}
+            n_{time} = \frac{T}{\Delta t}
+        \end{equation}
+        $n_{space}$ is the number of iterations over the grid, according to the coordinate $x$. \\
+        $n_{time}$ is the number of iterations over the grid, according to the time $t$. \\
+        
+        \[
+            \begin{blockarray}{cccccc}
+            x=0 & x=\Delta x & \cdots & n_{space}-1 & n_{space} \\
+            \begin{block}{(ccccc)c}
+              T_{ext} & T_{int} & \cdots & T_{int} & T_{ext} & t=0 \\
+              T_{ext} & 0 & \cdots & 0 & T_{ext} & t=\Delta t \\
+              \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+              T_{ext} & 0 & \cdots & 0 & T_{ext} & n_{time} \\
+            \end{block}
+            \end{blockarray}
+        \]
+        This is how the matrix is initialized, according to initial conditions.
+        For most of the used schemes, we need two previous time steps to calculate the actual step.
+        An order one scheme is used to find the second line of the matrix.
+        \[
+            \begin{blockarray}{cccccc}
+            i = 0 & i = 1 & \cdots & n_{space}-1 & n_{space} \\
+            \begin{block}{(ccccc)c}
+              T_{ext} & T_{int} & \cdots & T_{int} & T_{ext} & j=0 \\
+              T_{ext} & T_{i,j} & \cdots & T_{i,j} & T_{ext} & j=1 \\
+              \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+              T_{ext} & 0 & \cdots & 0 & T_{ext} & n_{time} \\
+            \end{block}
+            \end{blockarray}
+        \]
+        With this trick our matrix is ready to be used and filled up with every schemes.
+        \subsection*{Implicit schemes}
+
 
 
     % Results

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.28)  2 NOV 2017 11:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.28)  8 NOV 2017 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -27,69 +27,105 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./report.aux)
+) (./nomencl.sty
+Package: nomencl 2000/12/03 v3.1a Nomenclature package (BS)
+\nomlabelwidth=\dimen103
+\nom@tempdim=\dimen104
+\nomitemsep=\skip43
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/blkarray/blkarray.sty
+Package: blkarray 2015/02/27 v0.07 Block array (dpc)
+\c@BAenumi=\count88
+\BA@col=\count89
+\BA@block@cnt=\count90
+\BA@final@box=\box26
+\BA@first@box=\box27
+\BA@colsep=\dimen105
+\BA@ftn=\toks14
+\BAextrarowheight=\dimen106
+\BAextraheightafterhline=\dimen107
+\BAarrayrulewidth=\dimen108
+\BAdoublerulesep=\dimen109
+\BAfootskip=\dimen110
+\BA@dashbox=\box28
+\BA@ddashbox=\box29
+)
+\@glossaryfile=\write3
+\openout3 = `report.glo'.
+
+
+Writing glossary file report.glo
+(./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-
-/Users/augustinreille/Documents/WORKSPACE/CRANFIELD/ComputMeth/Assignment/repor
-t/report.tex:10: Misplaced alignment tab character &.
-\@title ->Computational Methods &
-                                  C++ Assignment
-l.10     \maketitle
-                   
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <12> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <8> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 10.
-[1
+(Font)              <6> on input line 13.
+ [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./report.toc)
-\tf@toc=\write3
-\openout3 = `report.toc'.
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./repo
+rt.toc)
+\tf@toc=\write4
+\openout4 = `report.toc'.
 
  [1
 
-] [1] (./report.aux) ) 
+] [1]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 39.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 47.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 47.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
+
+ []
+
+[1] [2] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 250 strings out of 492995
- 2907 string characters out of 6132704
- 54074 words of memory out of 5000000
- 3875 multiletter control sequences out of 15000+600000
- 7589 words of font info for 27 fonts, out of 8000000 for 9000
+ 634 strings out of 492995
+ 7442 string characters out of 6132704
+ 66438 words of memory out of 5000000
+ 4247 multiletter control sequences out of 15000+600000
+ 8501 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,6n,17p,209b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb>
-Output written on report.pdf (3 pages, 56683 bytes).
+ 23i,8n,19p,200b,179s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb>
+Output written on report.pdf (5 pages, 114017 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
