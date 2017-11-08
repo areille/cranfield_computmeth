@@ -79,7 +79,7 @@ int main()
     std::cin >> time;
     std::cout << std::endl;
     std::cout << std::endl;
-    
+
     int accessor = time * 100;
 
     vector<double> dft20 = DFresults[accessor];
