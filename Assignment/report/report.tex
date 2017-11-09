@@ -159,7 +159,7 @@
                 \end{equation}
                 with $$C = \frac{D\Delta t}{\Delta x ^2}  $$ 
                 The first vector at space $n$ is our boundaries conditions vector, so it is known.
-                In this scheme we must be aware that in (7) the right-term vector is bigger than
+                In this scheme we must be aware that the right-term vector is actually bigger than
                 the other, of 2 values, which corresponds to the exterior temperatures, which stays
                 the same all the time.\\
                 We apply the $LU$ solve algorithm for each space step, at the reduced vector, and add the $n+1$ vector to our 
@@ -209,7 +209,7 @@
                     with $$C = \frac{D\Delta t}{\Delta x ^2}  $$ 
                     The method is the same as Laasonen scheme, except that the left term vector found with the $LU$ solve
                     algorithm is multiplied by the right term matrix before the next space step.
-            \subsubsection{Object Oriented Design}
+            \subsection{Object Oriented Design}
 
             The object oriented classes for the C++ code are designed the following way :\\
             \begin{figure}[H]
@@ -228,6 +228,8 @@
     % Results
     \newpage
     \section{Results}
+        \subsection{Schemes study}
+        \subsection{Laasonen study : effect of the step time}
 
     % Discussion
 
