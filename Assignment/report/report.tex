@@ -1,7 +1,11 @@
-\documentclass{report}
+\documentclass{article}
 
 \usepackage{nomencl}
-\usepackage{blkarray}
+\usepackage{blkarray} % customed arrays
+\usepackage{amsmath} % matrix equations
+\usepackage{graphicx} % import images
+\usepackage{float} %floating imgs
+\graphicspath{ {ressources/} }
 \makeglossary
 
 \title{Computational Methods \& C++ Assignment}
@@ -16,7 +20,7 @@
     \tableofcontents
 
     % List of figures
-
+    \listoffigures
 
     % List of tables
 
@@ -29,11 +33,14 @@
     \end{abstract}
 
     % Introduction
-    \section*{Introduction}
+    \section{Introduction}
 
-
+    
     % Methods / Procedures
-    \section*{Methods}
+    \newpage
+    \section{Methods}
+
+
         Several methods are used :
         \begin{itemize}
             \item{Dufort-Frankel}
@@ -62,36 +69,166 @@
         
         \[
             \begin{blockarray}{cccccc}
-            x=0 & x=\Delta x & \cdots & n_{space}-1 & n_{space} \\
+            i=0 & i=1 & \cdots & n_{space}-1 & n_{space} \\
             \begin{block}{(ccccc)c}
-              T_{ext} & T_{int} & \cdots & T_{int} & T_{ext} & t=0 \\
-              T_{ext} & 0 & \cdots & 0 & T_{ext} & t=\Delta t \\
+              T_{ext} & T_{int} & \cdots & T_{int} & T_{ext} & j=0 \\
+              T_{ext} & 0 & \cdots & 0 & T_{ext} & j=1 \\
               \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
               T_{ext} & 0 & \cdots & 0 & T_{ext} & n_{time} \\
             \end{block}
             \end{blockarray}
         \]
         This is how the matrix is initialized, according to initial conditions.
-        For most of the used schemes, we need two previous time steps to calculate the actual step.
-        An order one scheme is used to find the second line of the matrix.
+        For most of the used schemes, we need two previous time steps to calculate the current step.
+        An order one scheme is used to find the second line of the matrix:
+        \begin{equation}
+            T_{i,1} = \frac{\alpha}{2} (T_{i+1,0} + T_{i-1,0}) + (1-\alpha)T_{i,0}
+        \end{equation}
+        with $$\alpha = 2\frac{D\delta t}{\delta x^{2}}$$
+        So we have:
         \[
             \begin{blockarray}{cccccc}
             i = 0 & i = 1 & \cdots & n_{space}-1 & n_{space} \\
             \begin{block}{(ccccc)c}
               T_{ext} & T_{int} & \cdots & T_{int} & T_{ext} & j=0 \\
-              T_{ext} & T_{i,j} & \cdots & T_{i,j} & T_{ext} & j=1 \\
+              T_{ext} & T_{i,1} & \cdots & T_{i,1} & T_{ext} & j=1 \\
               \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
               T_{ext} & 0 & \cdots & 0 & T_{ext} & n_{time} \\
             \end{block}
             \end{blockarray}
         \]
-        With this trick our matrix is ready to be used and filled up with every schemes.
-        \subsection*{Implicit schemes}
+        With this trick our matrix is ready to be used and filled up with every scheme.
 
+        \subsection{Explicit schemes}
+            For both of the explicit schemes used (Dufort-Frankel and Richardson schemes), the solving
+            is run the same way : with a double for-loop, the matrix is filled up. The only thing that change
+            is the way we advance in time and space.
 
+            \subsubsection{Dufort-Frankel}
+                Explicitly, for Dufort-Frankel method, we have:
+                \begin{equation}
+                    T_{j}^{n+1} = (\frac{1-\alpha}{1+\alpha})T_{j}^{n-1} + (\frac{\alpha}{1+\alpha})(T_{j+1}^{n}+T_{j-1}^{n})
+                \end{equation}
+                with $$\alpha = 2\frac{D\delta t}{\delta x^{2}}$$
 
+            \subsubsection{Richardson}
+                Explicitly, for Richardson method, we have:
+                \begin{equation}
+                    T_{j}^{n+1} = T_{j}^{n-1} + \alpha (T_{j-1}^{n} - 2T_{j}^{n} + T_{j+1}^{n})
+                \end{equation}
+                with $$\alpha = 2\frac{D\delta t}{\delta x^{2}}$$
+
+        \subsection{Implicit schemes}
+
+                For both implicit schemes, the vector solution is given by a matrix equation. A $LU$
+                factorization is used once, before a for-loop, to resolve the system for each space step.
+
+                \subsubsection{Laasonen}
+
+                We have :
+                \begin{equation}
+                    \frac{T_{j}^{n+1} - T_{j}^n}{\Delta t} = D \frac{T_{j+1}^{n+1}- 2T_{j}^{n+1} + T_{j-1}^{n+1}}{\Delta x^2}
+                \end{equation}
+
+                Written in a matrical way, the solution at space step $n+1$ is given by :
+                \begin{equation}
+                    \begin{bmatrix}
+                        1+2C   & -C     & 0      & \cdots & 0 \\
+                        -C     & 1+2C   & -C     & \ddots & \vdots \\
+                        0      & -C     & \ddots & \ddots & 0 \\
+                        \vdots & \ddots & \ddots & 1+2C   & -C\\
+                        0      & \cdots & 0      & -C     & 1+2C
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        T_{1} \\
+                        T_{2} \\
+                        \vdots \\
+                        T_{i} \\
+                        \vdots \\
+                        T_{ntime}
+                    \end{bmatrix}_{n+1}
+                    =
+                    \begin{bmatrix}
+                        T_{1} + CT_{0}\\
+                        T_{2} \\
+                        \vdots \\
+                        T_{i} \\
+                        \vdots \\
+                        T_{ntime} + CT_{f}
+                    \end{bmatrix}_{n}
+                \end{equation}
+                with $$C = \frac{D\Delta t}{\Delta x ^2}  $$ 
+                The first vector at space $n$ is our boundaries conditions vector, so it is known.
+                In this scheme we must be aware that in (7) the right-term vector is bigger than
+                the other, of 2 values, which corresponds to the exterior temperatures, which stays
+                the same all the time.\\
+                We apply the $LU$ solve algorithm for each space step, at the reduced vector, and add the $n+1$ vector to our 
+                result matrix. The new right term vector is the one found with the $LU$ solve algorithm.
+ 
+                \subsubsection{Crank-Nicholson}
+                    We have :
+                    \begin{equation}
+                        \frac{T_{j}^{n+1} - T_{j}^n}{\Delta t} = D\frac{1}{2} (\frac{T_{j+1}^{n+1}- 2T_{j}^{n+1} + T_{j-1}^{n+1}}{\Delta x^2}+\frac{T_{j+1}^{n}- 2T_{j}^{n} + T_{j-1}^{n}}{\Delta x^2})
+                    \end{equation}
+                    Written in a matrical way, the solution at space step $n+1$ is given by :
+                    \begin{equation}
+                        \begin{bmatrix}
+                            1+C    & -C/2   & 0     & \cdots & 0 \\
+                            -C/2   & 1+C    & -C/2   & \ddots & \vdots \\
+                            0      & -C/2   & \ddots & \ddots & 0 \\
+                            \vdots & \ddots & \ddots & 1+C   & -C/2\\
+                            0      & \cdots & 0      & -C/2   & 1+C
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            T_{1} \\
+                            T_{2} \\
+                            \vdots \\
+                            T_{i} \\
+                            \vdots \\
+                            T_{ntime}
+                        \end{bmatrix}_{n+1}
+                    \end{equation}
+                    \[
+                        =
+                        \begin{bmatrix}
+                            1-C    &C/2    & 0      & \cdots & 0 \\
+                            C/2     & 1-C   & C/2     & \ddots & \vdots \\
+                            0      & C/2     & \ddots & \ddots & 0 \\
+                            \vdots & \ddots & \ddots & 1-C   & C/2\\
+                            0      & \cdots & 0      & C/2     & 1-C
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            T_{1} + CT_{0}\\
+                            T_{2} \\
+                            \vdots \\
+                            T_{i} \\
+                            \vdots \\
+                            T_{ntime} + CT_{f}
+                        \end{bmatrix}_{n}
+                    \]
+                    with $$C = \frac{D\Delta t}{\Delta x ^2}  $$ 
+                    The method is the same as Laasonen scheme, except that the left term vector found with the $LU$ solve
+                    algorithm is multiplied by the right term matrix before the next space step.
+            \newpage
+            \subsubsection{Object Oriented Design}
+
+            The object oriented classes for the C++ code are designed the following way :\\
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{UML.png}
+                \caption{UML Diagram of the C++ object oriented code}
+            \end{figure}
+            There is a main base class called PDESolve, which initializes all the variables, and two functions :
+            \begin{itemize}
+                \item{get\_res() : returns the results Matrix}
+                \item{solve() : virtual function which will be overwritten in subclasses}
+            \end{itemize}
+            There is two subclasses of PDESolve : PDEExplicit and PDEImplicit. Each one has a solve() function, and a virtual advance function,
+            which corresponds at the way the space and time steps are incrementded.
+            The PDEImplicit class also initializes all the matrixes and functions needed for the LU factorization and solve.
+            Each subsubclass, which corresponds to each method, has its own particular advance method.
     % Results
-
+    \newpage
+    \section{Results}
 
     % Discussion
 

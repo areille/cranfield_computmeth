@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Methods}{2}
+\contentsline {subsection}{\numberline {2.1}Explicit schemes}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Dufort-Frankel}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}Richardson}{3}
+\contentsline {subsection}{\numberline {2.2}Implicit schemes}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}Laasonen}{3}
+\contentsline {subsubsection}{\numberline {2.2.2}Crank-Nicholson}{4}
+\contentsline {subsubsection}{\numberline {2.2.3}Object Oriented Design}{6}
+\contentsline {section}{\numberline {3}Results}{7}
