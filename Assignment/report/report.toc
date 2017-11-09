@@ -6,5 +6,5 @@
 \contentsline {subsection}{\numberline {2.2}Implicit schemes}{3}
 \contentsline {subsubsection}{\numberline {2.2.1}Laasonen}{3}
 \contentsline {subsubsection}{\numberline {2.2.2}Crank-Nicholson}{4}
-\contentsline {subsubsection}{\numberline {2.2.3}Object Oriented Design}{6}
-\contentsline {section}{\numberline {3}Results}{7}
+\contentsline {subsubsection}{\numberline {2.2.3}Object Oriented Design}{5}
+\contentsline {section}{\numberline {3}Results}{6}

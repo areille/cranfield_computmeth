@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <math.h>
 #include "vector.h"
 #include "matrix.h"
@@ -19,6 +20,35 @@ double calculateSum(int max_m, double D, double L, double t, double x)
         sum += exp(term_1) * term_2 * sin(term_3);
     }
     return sum;
+}
+
+void printsMethod(Matrix &results, bool printOne, double dt)
+{
+    if (printOne)
+    {
+        int x1 = 0.1 / dt;
+        int x2 = 0.2 / dt;
+        int x3 = 0.3 / dt;
+        int x4 = 0.4 / dt;
+        int x5 = 0.5 / dt;
+        vector<double> t0 = results[0];
+        vector<double> t01 = results[x1];
+        vector<double> t02 = results[x2];
+        vector<double> t03 = results[x3];
+        vector<double> t04 = results[x4];
+        vector<double> t05 = results[x5];
+        ofstream csvFile;
+        csvFile.open("results.csv");
+        csvFile << "∆t = " << dt << "\n";
+        csvFile << "x, t = 0, t = 0.1, t = 0.2, t = 0.3, t = 0.4, t = 0.5\n";
+        double x = 0.0;
+        for (int i = 0; i < t0.size(); i++)
+        {
+            csvFile << x << ", "<< t0[i] << ", " << t01[i] << ", " << t02[i] << ", " << t03[i] << ", " << t04[i] << ", " << t05[i] << "\n";
+            x+=0.05;
+        }
+        csvFile.close();
+    }
 }
 
 int main()
@@ -75,53 +105,53 @@ int main()
     }
 
     double time = 0.0;
-    std::cout << "Results : type the time you want" << std::endl;
-    std::cin >> time;
-    std::cout << std::endl;
-    std::cout << std::endl;
+    // std::cout << "Results : type the time you want" << std::endl;
+    // std::cin >> time;
+    // std::cout << std::endl;
+    // std::cout << std::endl;
 
     int accessor = time * 100;
 
-    vector<double> dft20 = DFresults[accessor];
-    vector<double> r20 = Richresults[accessor];
-    vector<double> las20 = Laasresults[accessor];
-    vector<double> cr20 = CrankNicholsonResults[accessor];
-    vector<double> an20 = Anaresults[accessor];
+    // vector<double> dft20 = DFresults[accessor];
+    // vector<double> r20 = Richresults[accessor];
+    // vector<double> las20 = Laasresults[accessor];
+    // vector<double> cr20 = CrankNicholsonResults[accessor];
+    // vector<double> an20 = Anaresults[accessor];
 
-    std::cout << "Results with the Dufort Frankel method at t = " << time << "h :"<< std::endl;
-    for (int i = 0; i < dft20.size(); i++)
-    {
-        std::cout << dft20[i] << ", ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Results with the Richardson method at t = " << time << "h :"<< std::endl;
-    for (int i = 0; i < r20.size(); i++)
-    {
-        std::cout << r20[i] << ", ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Results with the Laasonen method at t = " << time << "h :"<< std::endl;
-    for (int i = 0; i < las20.size(); i++)
-    {
-        std::cout << las20[i] << ", ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Results with the Crank Nicholson method at t = " << time << "h :"<< std::endl;
-    for (int i = 0; i < cr20.size(); i++)
-    {
-        std::cout << cr20[i] << ", ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Analytical results at t = " << time << "h :"<< std::endl;
-    for (int i = 0; i < an20.size(); i++)
-    {
-        std::cout << an20[i] << ", ";
-    }
-    // std::cout << Anaresults[10] << std::endl;
+    // std::cout << "Results with the Dufort Frankel method at t = " << time << "h :"<< std::endl;
+    // for (int i = 0; i < dft20.size(); i++)
+    // {
+    //     std::cout << dft20[i] << ", ";
+    // }
+    // std::cout << std::endl;
+    // std::cout << std::endl;
+    // std::cout << "Results with the Richardson method at t = " << time << "h :"<< std::endl;
+    // for (int i = 0; i < r20.size(); i++)
+    // {
+    //     std::cout << r20[i] << ", ";
+    // }
+    // std::cout << std::endl;
+    // std::cout << std::endl;
+    // std::cout << "Results with the Laasonen method at t = " << time << "h :"<< std::endl;
+    // for (int i = 0; i < las20.size(); i++)
+    // {
+    //     std::cout << las20[i] << ", ";
+    // }
+    // std::cout << std::endl;
+    // std::cout << std::endl;
+    // std::cout << "Results with the Crank Nicholson method at t = " << time << "h :"<< std::endl;
+    // for (int i = 0; i < cr20.size(); i++)
+    // {
+    //     std::cout << cr20[i] << ", ";
+    // }
+    // std::cout << std::endl;
+    // std::cout << std::endl;
+    // std::cout << "Analytical results at t = " << time << "h :"<< std::endl;
+    // for (int i = 0; i < an20.size(); i++)
+    // {
+    //     std::cout << an20[i] << ", ";
+    // }
+    printsMethod(Laasresults, true, dt);
 
     return 0;
 }

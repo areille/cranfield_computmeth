@@ -27,6 +27,7 @@
         "vector": "cpp",
         "__config": "cpp",
         "__nullptr": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "locale": "cpp"
     }
 }
