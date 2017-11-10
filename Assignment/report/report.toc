@@ -1,12 +1,19 @@
-\contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Methods}{2}
-\contentsline {subsection}{\numberline {2.1}Explicit schemes}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}Dufort-Frankel}{3}
-\contentsline {subsubsection}{\numberline {2.1.2}Richardson}{3}
-\contentsline {subsection}{\numberline {2.2}Implicit schemes}{3}
-\contentsline {subsubsection}{\numberline {2.2.1}Laasonen}{3}
-\contentsline {subsubsection}{\numberline {2.2.2}Crank-Nicholson}{4}
-\contentsline {subsection}{\numberline {2.3}Object Oriented Design}{5}
-\contentsline {section}{\numberline {3}Results}{6}
-\contentsline {subsection}{\numberline {3.1}Schemes study}{6}
-\contentsline {subsection}{\numberline {3.2}Laasonen study : effect of the step time}{6}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {2}Methods}{5}
+\contentsline {subsection}{\numberline {2.1}Explicit schemes}{6}
+\contentsline {subsubsection}{\numberline {2.1.1}Dufort-Frankel}{6}
+\contentsline {subsubsection}{\numberline {2.1.2}Richardson}{6}
+\contentsline {subsection}{\numberline {2.2}Implicit schemes}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Laasonen}{6}
+\contentsline {subsubsection}{\numberline {2.2.2}Crank-Nicholson}{7}
+\contentsline {subsection}{\numberline {2.3}Analytical solution}{8}
+\contentsline {subsection}{\numberline {2.4}Object Oriented Design}{8}
+\contentsline {section}{\numberline {3}Results}{10}
+\contentsline {subsection}{\numberline {3.1}Schemes study}{10}
+\contentsline {subsection}{\numberline {3.2}Laasonen method : effect of the step time}{12}
+\contentsline {section}{\numberline {4}Discussion}{13}
+\contentsline {section}{\numberline {5}Future work}{14}
+\contentsline {section}{\numberline {6}Conclusion}{15}
+\contentsline {section}{\numberline {7}Aknowledgments}{16}
+\contentsline {section}{\numberline {8}References}{17}
+\contentsline {section}{\numberline {9}Appendices}{18}

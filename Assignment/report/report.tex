@@ -4,7 +4,8 @@
 \usepackage{blkarray} % customed arrays
 \usepackage{amsmath} % matrix equations
 \usepackage{graphicx} % import images
-\usepackage{float} %floating imgs
+\usepackage{float} % floating imgs
+\usepackage{subcaption} % several figures on one line
 \graphicspath{ {ressources/} }
 \makeglossary
 
@@ -16,23 +17,28 @@
     % Title
     \maketitle
 
-    % Table of contents
-    \tableofcontents
-
-    % List of figures
-    \listoffigures
-
-    % List of tables
-
-    % List of abbreviations / Nomenclature
-
     % Abstract
     \begin{abstract}
         A one-space dimensional problem is considered, to examine the application
         of numerical schemes for the solution of partial differential equations. 
     \end{abstract}
 
+    % Table of contents
+    \newpage
+    \tableofcontents
+
+    % List of figures
+    \newpage
+    \listoffigures
+
+    % List of tables
+    \listoftables
+
+    % List of abbreviations / Nomenclature
+
+
     % Introduction
+    \newpage
     \section{Introduction}
 
     
@@ -209,6 +215,15 @@
                     with $$C = \frac{D\Delta t}{\Delta x ^2}  $$ 
                     The method is the same as Laasonen scheme, except that the left term vector found with the $LU$ solve
                     algorithm is multiplied by the right term matrix before the next space step.
+
+            \subsection{Analytical solution}
+                The analytical solution of the problem considered will be used to compare our results and to calculate
+            the errors. The result of the analytical solution for a time $t$ and a position $x$ is given by : 
+            \begin{equation}
+                T = T_{ext}+2(T_{int}-T_{ext})\sum_{m=1}^{m=\infty} e^{-D(m\pi / L)^{2}t} \frac{1-(-1)^m}{m\pi} sin(\frac{m\pi x}{L})
+            \end{equation}
+
+
             \subsection{Object Oriented Design}
 
             The object oriented classes for the C++ code are designed the following way :\\
@@ -229,22 +244,99 @@
     \newpage
     \section{Results}
         \subsection{Schemes study}
-        \subsection{Laasonen study : effect of the step time}
+            Note that results from Richardson scheme are not displayed on the following plots, due to its unstability : 
+        the incorrect values polluted our charts.
+        \begin{figure}[H]
+            \includegraphics[width=\textwidth]{t01.png}
+            \caption{Results with differents schemes at t = 0,1h}
+        \end{figure}
+        We can see that except for the Richardson scheme, the results are quite the same. The errors had been calculated 
+        to evaluate the accuracy of each method.
+        \begin{table}[H]
+            \centering
+            \caption{Errors for different schemes at t = 0,1h}
+            \begin{tabular}{|c|c|c|c|l}
+            \cline{1-4}
+            Errors & Dufort-Frankel & Laasonen & Crank-Nicholson &  \\ \cline{1-4}
+            1-norm & 0,56\%         & 1,72\%   & 1,26\%          &  \\ \cline{1-4}
+            2-norm & 24,43\%        & 2,35\%   & 1,61\%          &  \\ \cline{1-4}
+            $\infty$-norm  & 1,18\%         & 2,62\%   & 1,61\%          &  \\ \cline{1-4}
+            \end{tabular}
+        \end{table}
+        We observe that for the 1-norm and the $\infty$-norm, Dufort-Frankel method is the most accurate, 
+        followed by the Crank-Nicholson method then by the Laasonen method. Let see the evolution of the error
+        while time is increased.
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{t02.png}
+                \caption{t = 0,2h}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{t03.png}
+                \caption{t = 0,3h}
+            \end{subfigure}
+            \\
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{t04.png}
+                \caption{t = 0,4h}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{t05.png}
+                \caption{t = 0,5h}
+            \end{subfigure}
+            \caption{Results with differents schemes at different times}
+        \end{figure}
+        \begin{table}[H]
+            \centering
+            \caption{Errors for different schemes at different times}
+            \begin{tabular}{|c|c|c|c|l}
+            \cline{1-4}
+            Errors & Dufort-Frankel & Laasonen & Crank-Nicholson &  \\ \cline{1-4}
+            \multicolumn{4}{|c|}{t = 0,2h}                       &  \\ \cline{1-4}
+            1-norm & 0,37\%         & 1,05\%   & 0,80\%          &  \\ \cline{1-4}
+            2-norm & 14,11\%        & 1,25\%   & 0,87\%          &  \\ \cline{1-4}
+            $\infty$-norm  & 0,63\%         & 1,28\%   & 0,81\%          &  \\ \cline{1-4}
+            \multicolumn{4}{|c|}{t = 0,3h}                       &  \\ \cline{1-4}
+            1-norm & 0,27\%         & 0,77\%   & 0,60\%          &  \\ \cline{1-4}
+            2-norm & 10,50\%        & 0,84\%   & 0,62\%          &  \\ \cline{1-4}
+            $\infty$-norm  & 0,42\%         & 0,83\%   & 0,54\%          &  \\ \cline{1-4}
+            \multicolumn{4}{|c|}{t = 0,4h}                       &  \\ \cline{1-4}
+            1-norm & 0,22\%         & 0,64\%   & 0,49\%          &  \\ \cline{1-4}
+            2-norm & 8,84\%        & 0,67\%   & 0,52\%          &  \\ \cline{1-4}
+            $\infty$-norm  & 0,34\%         & 0,60\%   & 0,43\%          &  \\ \cline{1-4}
+            \multicolumn{4}{|c|}{t = 0,5h}                       &  \\ \cline{1-4}
+            1-norm & 0,18\%         & 0,55\%   & 0,42\%          &  \\ \cline{1-4}
+            2-norm & 7,86\%        & 0,58\%   & 0,45\%          &  \\ \cline{1-4}
+            $\infty$-norm  & 0,32\%         & 0,51\%   & 0,41\%          &  \\ \cline{1-4}
+            \end{tabular}
+        \end{table}
+
+        We observe that the error is globally decreasing as time increase. The most accurate methods appears to 
+        be the Crank-Nicholson method, then the Laasonen method.
+        \subsection{Laasonen method : effect of the step time}
 
     % Discussion
-
+    \newpage
+    \section{Discussion}
 
     % Future work
-
+    \newpage
+    \section{Future work}
 
     % Conclusion
-
+    \newpage
+    \section{Conclusion}
 
     % Aknowledgments
-
+    \newpage
+    \section{Aknowledgments}
 
     % References
-
+    \newpage
+    \section{References}
 
     % Appendices
+    \newpage
+    \section{Appendices}
 \end{document}
