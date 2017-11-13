@@ -151,7 +151,7 @@ int main()
     // {
     //     std::cout << an20[i] << ", ";
     // }
-    printsMethod(Laasresults, true, dt);
+    printsMethod(Anaresults, true, dt);
 
     return 0;
 }

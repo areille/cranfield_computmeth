@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{hyperref}
 \usepackage{nomencl}
 \usepackage{blkarray} % customed arrays
 \usepackage{amsmath} % matrix equations
@@ -35,7 +36,7 @@
     \listoftables
 
     % List of abbreviations / Nomenclature
-
+    
 
     % Introduction
     \newpage
@@ -314,8 +315,31 @@
 
         We observe that the error is globally decreasing as time increase. The most accurate methods appears to 
         be the Crank-Nicholson method, then the Laasonen method.
-        \subsection{Laasonen method : effect of the step time}
 
+        \subsection{Laasonen method : effect of the step time}
+        \begin{figure}[H]
+            \includegraphics[width=\textwidth]{analytical.png}
+            \caption{Analytical results at different times}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{las-1.png}
+                \caption{$\Delta t$ = 0,01}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{las-2.png}
+                \caption{$\Delta t$ = 0,025}
+            \end{subfigure}
+            \\
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{las-3.png}
+                \caption{$\Delta t$ = 0,05}
+            \end{subfigure}
+            \caption{Effect of time step increasing on Laasonen scheme}
+        \end{figure}
+        We can see that the shape of the results is more accurate as $\Delta t$ is little.
+        Increasing $\Delta t$ gives less accurate results.
     % Discussion
     \newpage
     \section{Discussion}
