@@ -19,7 +19,7 @@
     % Abstract
     \begin{abstract}
         A one-space dimensional problem is considered, to examine the application
-        of numerical schemes for the solution of partial differential equations. 
+        of numerical schemes for the solution of partial differential equations.
         The Dufort-Frankel, Richardson, Laasonen and Crank-Nicolson schemes are implemented,
         considered, and compared to the analytical solution of the one-space problem.
         The effect of the time step is investigated for the Laasonen scheme.
@@ -39,12 +39,19 @@
 
     % List of abbreviations / Nomenclature
     \section*{Nomenclature}
-        
+        $T_i^n$ . . . Temperature at space $i$ and time $n$\\
+        $D$ . . . . Diffusivity of the wall\\
+        $L$ . . . . Total length of the wall\\
+        $T$ . . . . Total time of the study\\
+        $\Delta x$ . . . Space step\\
+        $\Delta t$ . . . Time step\\
+        $\delta x$ . . . . partial derivative according to space\\
+        $\delta t$ . . . . partial derivative according to time\\
     % Introduction
     \newpage
     \section{Introduction}
 
-    A PDE (Partial differential equation) is an equation which includes derivatives of an unknown function, with at least 2 variables.
+    A PDE (Partial Differential Equation) is an equation which includes derivatives of an unknown function, with at least 2 variables.
     PDEs can describe the behavior of lot of engineering phenomena \cite{pde}, that's why it is important to 
     known how to resolve them computationally. One way to resolve PDEs is to discretize the problem into
     a mesh. Applying finites differences on some points of the mesh, we can find a function
@@ -52,7 +59,8 @@
     \\
     To find the unknown function, applying differences on a mesh work differently according to the difference chosen, 
     but also according to the chosen mesh. For a one-dimensional problem, time steps and space steps can impact the accuracy
-    of the result found. Also, the chosen differences affect the result. Well-known sets of finite differences are called schemes.
+    of the result found. Also, the chosen differences affect the result. A discretisation scheme is the way we choose to apply
+    finites differences.
     \\
     In this study we are going to see how the accuracy of known schemes are evolving for a one-dimensional problem, and how the 
     meshing impact the accuracy of those schemes.
@@ -63,8 +71,8 @@
     % Methods / Procedures
     \newpage
     \section{Methods}
-
-        Several methods are used :
+        Our study results are to be stored in some matrixes, each matrix corresponding to one scheme.\\
+        Several schemes are used :
         \begin{itemize}
             \item{Dufort-Frankel}
             \item{Richardson}
@@ -157,6 +165,7 @@
 
                 Written in a matrical way, the solution at space step $n+1$ is given by :
                 \begin{equation}
+                    \label{eq:laas}
                     \begin{bmatrix}
                         1+2C   & -C     & 0      & \cdots & 0 \\
                         -C     & 1+2C   & -C     & \ddots & \vdots \\
@@ -212,6 +221,7 @@
                             \vdots \\
                             T_{ntime}
                         \end{bmatrix}_{n+1}
+                        \label{eq:crank}
                     \end{equation}
                     \[
                         =
@@ -283,28 +293,8 @@
         \end{table}
         We observe that Dufort-Frankel method is the most accurate, 
         followed by the Crank-Nicholson method then by the Laasonen method. Let see the evolution of the error
-        while time is increased.
-        % \begin{figure}[H]
-        %     \centering
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{t02.png}
-        %         \caption{t = 0,2h}
-        %     \end{subfigure}
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{t03.png}
-        %         \caption{t = 0,3h}
-        %     \end{subfigure}
-        %     \\
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{t04.png}
-        %         \caption{t = 0,4h}
-        %     \end{subfigure}
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{t05.png}
-        %         \caption{t = 0,5h}
-        %     \end{subfigure}
-        %     \caption{Results with differents schemes at different times}
-        % \end{figure}
+        while we advance in time. (see appendix for plots)
+        
         \begin{table}[H]
             \centering
             \caption{Errors for different schemes at different times}
@@ -326,26 +316,14 @@
             \includegraphics[width=\textwidth]{analytical.png}
             \caption{Analytical results at different times}
         \end{figure}
-        % \begin{figure}[H]
-        %     \centering
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{las-1.png}
-        %         \caption{$\Delta t$ = 0,01}
-        %     \end{subfigure}
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{las-2.png}
-        %         \caption{$\Delta t$ = 0,025}
-        %     \end{subfigure}
-        %     \\
-        %     \begin{subfigure}[b]{0.45\textwidth}
-        %         \includegraphics[width=\textwidth]{las-3.png}
-        %         \caption{$\Delta t$ = 0,05}
-        %     \end{subfigure}
-        %     \caption{Effect of time step increasing on Laasonen scheme}
-        % \end{figure}
+        \begin{figure}[H]
+            \includegraphics[width=\textwidth]{las-1.png}
+            \caption{Laasonen scheme with $\Delta t$ = 0,01}
+        \end{figure}
+        
         We can see that the shape of the results is more accurate as $\Delta t$ is little.
         It may be assumed that increasing $\Delta t$ gives less accurate results.
-        Let's calculate the error between these values and the analytical values.
+        Let's calculate the error between these values and the analytical values. (See appendix for plots)
 
         \begin{table}[H]
             \centering
@@ -368,7 +346,7 @@
     \section{Discussion}
         \subsection{Analytical solution}
             First thing that should be considered is that the analytical solution should not be
-            considered as the perfect exact solution, because of several things.
+            considered as the perfect exact solution, because of several factors.
             \\
             First, the analytical solution is calculated by the computer, so there may be some numerical error.
             \\
@@ -395,7 +373,7 @@
                 This way, we would have reduced the total complexity of our code and the computational time.
             \subsubsection{Vectors}
                 Another way to reduce the complexity of our code and the used memory would have been to use vectors instead
-                of matrixes. Indeed, for the implicit methods, most of our matrixes are filled up with zeros, and every line is
+                of matrixes in equations \eqref{eq:laas} and \eqref{eq:crank}. Indeed, for the implicit methods, most of our matrixes are filled up with zeros, and every line is
                 the same, only the position of the values change. We could have used only one vector of size 3 instead of a quite big matrix.
                 It is quite all right for this study because we are working with only two dimensions, and with a quite reduced space.
                 By moving in a more complex problem, delays would have appeared.
@@ -413,12 +391,12 @@
                 easy to test, so that we can easily find some way to make them stable if they are not.
             \subsubsection{Dufort-Frankel versus other schemes}
                 It appears that Dufort-Frankel scheme is the most accurate of the studied schemes. One explanation to those
-                results is that with this method, accurate solutions are obtained if $\Delta t << \Delta x$ \cite{df}.
+                results is that with this method, accurate solutions are obtained if $\Delta t << \Delta x$ \cite{df}, which
+                is our case.
                 The two other schemes, Laasonen and Crank Nicholson seem to have the same accuracy.
                 \\
-                Crank Nicholson scheme needs a low $D$ coefficient for numerical accuracy \cite{crank}. That's why 
+                Crank Nicholson scheme needs a low $D$ coefficient for numerical accuracy \cite{crank}, which is our case. That's why 
                 we have a quite good accuracy (less than $1\%$) in our results.
-
             
         \subsection{Laasonnen method : effect of the step time}
             As we see on Table \ref{table:laas}, for a fixed $\Delta t$, the error tends to decrease as time grows. However,
@@ -454,8 +432,23 @@
     % Conclusion
     \newpage
     \section{Conclusion}
-
-        To choose the good scheme for the resolution of a PDE, we need to ask us a few questions.
+        For a one dimensional problem, PDE can be resolved using discretisation schemes. In this study
+        we saw that several schemes can fit for this kind of problem. However, some schemes appears to
+        be more accurate.\\
+        The accuracy of all the schemes seems to be impacted by common causes:
+        \begin{itemize}
+            \item{Error grows as time step grows : the smallest time step must be used, while complying with
+            the computational ressources that are at our disposal (indeed, numerical computational error could appear)}
+            \item{Error tends to decrease as the time study grows}
+        \end{itemize}
+        
+        However, there is some factors which gives each scheme particular accuracy.\\
+        \\
+        Resolving PDE with computational methods also introduce numerical errors, due to the computers way
+        of calculating. Depending on the power of the computer we use, we must try to be as precise as possible
+        by setting a study mesh with a grid as small as possible. Some other study with different computational ressource
+        could teach us about the effect of a very small grid, i.e. the effect of a lot more calculations.
+        
     % Aknowledgments
     % \newpage
     % \section{Aknowledgments}
@@ -497,4 +490,31 @@
     % Appendices
     \newpage
     \section{Appendices}
-\end{document}
+        \subsection{Plots}
+        \subsubsection{Different schemes study}
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{t02.png}
+                \caption{Results with differents schemes at t = 0,2h}
+            \end{figure}
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{t03.png}
+                \caption{Results with differents schemes at t = 0,3h}
+            \end{figure}
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{t04.png}
+                \caption{Results with differents schemes at t = 0,4h}
+            \end{figure}
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{t05.png}
+                \caption{Results with differents schemes at t = 0,5h}
+            \end{figure}
+        \subsubsection{Laasonen scheme study}
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{las-2.png}
+                \caption{Laasonen scheme with $\Delta t$ = 0,025}
+            \end{figure}
+            \begin{figure}[H]
+                \includegraphics[width=\textwidth]{las-3.png}
+                \caption{Laasonen scheme with $\Delta t$ = 0,05}
+            \end{figure}
+    \end{document}
