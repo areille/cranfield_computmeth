@@ -33,8 +33,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-INPUT nomencl.sty
-INPUT nomencl.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/blkarray/blkarray.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/blkarray/blkarray.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -65,7 +63,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
-OUTPUT report.glo
 INPUT report.aux
 INPUT report.aux
 OUTPUT report.aux
@@ -132,8 +129,8 @@ INPUT ./ressources/t01.png
 INPUT ressources/analytical.png
 INPUT ./ressources/analytical.png
 INPUT ./ressources/analytical.png
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT report.aux
 INPUT ./report.out
 INPUT ./report.out

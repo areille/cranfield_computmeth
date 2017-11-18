@@ -1,14 +1,12 @@
 \documentclass{article}
 
 \usepackage{hyperref}
-\usepackage{nomencl}
 \usepackage{blkarray} % customed arrays
 \usepackage{amsmath} % matrix equations
 \usepackage{graphicx} % import images
 \usepackage{float} % floating imgs
 \usepackage{subcaption} % several figures on one line
 \graphicspath{ {ressources/} }
-\makeglossary
 
 \title{Computational Methods \& C++ Assignment}
 \author{Augustin Reille}
@@ -22,6 +20,10 @@
     \begin{abstract}
         A one-space dimensional problem is considered, to examine the application
         of numerical schemes for the solution of partial differential equations. 
+        The Dufort-Frankel, Richardson, Laasonen and Crank-Nicolson schemes are implemented,
+        considered, and compared to the analytical solution of the one-space problem.
+        The effect of the time step is investigated for the Laasonen scheme.
+        \\ An object oriented designed C++ code is implemented to point out results.
     \end{abstract}
 
     % Table of contents
@@ -36,17 +38,31 @@
     \listoftables
 
     % List of abbreviations / Nomenclature
-    
-
+    \section*{Nomenclature}
+        
     % Introduction
     \newpage
     \section{Introduction}
 
+    A PDE (Partial differential equation) is an equation which includes derivatives of an unknown function, with at least 2 variables.
+    PDEs can describe the behavior of lot of engineering phenomena \cite{pde}, that's why it is important to 
+    known how to resolve them computationally. One way to resolve PDEs is to discretize the problem into
+    a mesh. Applying finites differences on some points of the mesh, we can find a function
+    which is more or less the same than the unknown function described by the PDE.
+    \\
+    To find the unknown function, applying differences on a mesh work differently according to the difference chosen, 
+    but also according to the chosen mesh. For a one-dimensional problem, time steps and space steps can impact the accuracy
+    of the result found. Also, the chosen differences affect the result. Well-known sets of finite differences are called schemes.
+    \\
+    In this study we are going to see how the accuracy of known schemes are evolving for a one-dimensional problem, and how the 
+    meshing impact the accuracy of those schemes.
     
+    
+
+
     % Methods / Procedures
     \newpage
     \section{Methods}
-
 
         Several methods are used :
         \begin{itemize}
@@ -412,20 +428,45 @@
     % Future work
     \newpage
     \section{Future work}
+        Our future work would be based on three major axes : memory, runtime and interface optimization.
+        It would be interesting to take a smaller time step, and to try to test our program
+        with a parallel programming model, and run it on an HPC, as we have the opportunity 
+        to work on one here at Cranfield University.
+        \subsection{Memory optimization}
+            As said previously, memory use could be improved by at least two manners :
+            \begin{itemize}
+                \item{Calculate only the values which will be used in the study}
+                \item{For implicit schemes, replace the tridiagonal matrix by one vector}
+            \end{itemize}
+        \subsection{Runtime optimization}
+            As said before, since we have a small study scale, it is not crucial to have a good
+            runtime optimization. However, we still could optimize the runtime, particularly
+            by using Thomas algorithm instead of LU algorithm.
+        \subsection{Interface optimization}
+            We also could improve the way the results are printed : here we write them brutally
+            in our main function, or in a CSV file, which is used in a spreadsheet application
+            in order to print graphics.
+            \\
+            Maybe a little interface more user-friendly could be developped, using QT or something
+            else, with the possibility for the user to input data, initial conditions, the chosen
+            scheme, and with the printing of graphics and errors value.
 
     % Conclusion
     \newpage
     \section{Conclusion}
 
+        To choose the good scheme for the resolution of a PDE, we need to ask us a few questions.
     % Aknowledgments
-    \newpage
-    \section{Aknowledgments}
+    % \newpage
+    % \section{Aknowledgments}
 
     % References
     \newpage
     \section{References}
     \begin{thebibliography}{9}
-        
+        \bibitem{pde}
+        Wazwaz, Abdul-Majid. \textit{Partial differential equations}. CRC Press, 2002.
+
         \bibitem{rich} 
         Markus Schmuck - Numerical Methods for PDEs,
         \\\texttt{http://www.macs.hw.ac.uk/\~ms713/lecture\_9.pdf}.
@@ -444,6 +485,8 @@
         \bibitem{laas} 
         D. Britz \& Jorg Strutwolf, \textit{Digital Simulation in Electrochemistry}.
         Springer, 2006
+
+        
         % \bibitem{einstein} 
         % Albert Einstein. 
         % \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.28)  18 NOV 2017 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.28)  18 NOV 2017 16:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -145,12 +145,6 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
-(./nomencl.sty
-Package: nomencl 2000/12/03 v3.1a Nomenclature package (BS)
-\nomlabelwidth=\dimen107
-\nom@tempdim=\dimen108
-\nomitemsep=\skip44
-)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/blkarray/blkarray.sty
 Package: blkarray 2015/02/27 v0.07 Block array (dpc)
 \c@BAenumi=\count97
@@ -158,19 +152,19 @@ Package: blkarray 2015/02/27 v0.07 Block array (dpc)
 \BA@block@cnt=\count99
 \BA@final@box=\box26
 \BA@first@box=\box27
-\BA@colsep=\dimen109
+\BA@colsep=\dimen107
 \BA@ftn=\toks15
-\BAextrarowheight=\dimen110
-\BAextraheightafterhline=\dimen111
-\BAarrayrulewidth=\dimen112
-\BAdoublerulesep=\dimen113
-\BAfootskip=\dimen114
+\BAextrarowheight=\dimen108
+\BAextraheightafterhline=\dimen109
+\BAarrayrulewidth=\dimen110
+\BAdoublerulesep=\dimen111
+\BAfootskip=\dimen112
 \BA@dashbox=\box28
 \BA@ddashbox=\box29
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/11/05 v2.16a AMS math features
-\@mathmargin=\skip45
+\@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -179,11 +173,11 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen115
+\ex@=\dimen113
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen116
+\pmbraise@=\dimen114
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
@@ -200,7 +194,7 @@ LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box30
 \strutbox@=\box31
-\big@size=\dimen117
+\big@size=\dimen115
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count105
@@ -213,15 +207,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \column@=\count110
 \maxfields@=\count111
 \andhelp@=\toks18
-\eqnshift@=\dimen118
-\alignsep@=\dimen119
-\tagshift@=\dimen120
-\tagwidth@=\dimen121
-\totwidth@=\dimen122
-\lineht@=\dimen123
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
 \@envbody=\toks19
-\multlinegap=\skip46
-\multlinetaggap=\skip47
+\multlinegap=\skip45
+\multlinetaggap=\skip46
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
@@ -244,8 +238,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 \Gread@gobject=\count112
 ))
-\Gin@req@height=\dimen124
-\Gin@req@width=\dimen125
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -264,13 +258,13 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen126
-\captionmargin@=\dimen127
-\captionwidth=\dimen128
-\caption@tempdima=\dimen129
-\caption@indent=\dimen130
-\caption@parindent=\dimen131
-\caption@hangindent=\dimen132
+\captionmargin=\dimen124
+\captionmargin@=\dimen125
+\captionwidth=\dimen126
+\caption@tempdima=\dimen127
+\caption@indent=\dimen128
+\caption@parindent=\dimen129
+\caption@hangindent=\dimen130
 )
 \c@ContinuedFloat=\count114
 Package caption Info: float package is loaded.
@@ -279,30 +273,25 @@ Package caption Info: hyperref package is loaded.
 \c@subfigure=\count115
 \c@subtable=\count116
 )
-\@glossaryfile=\write3
-\openout3 = `report.glo'.
-
-
-Writing glossary file report.glo
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 \AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 17.
+Package hyperref Info: Link coloring OFF on input line 15.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -312,25 +301,25 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count117
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
 
 (./report.out) (./report.out)
-\@outlinefile=\write4
-\openout4 = `report.out'.
+\@outlinefile=\write3
+\openout3 = `report.out'.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
-\scratchdimen=\dimen133
+\scratchdimen=\dimen131
 \scratchbox=\box35
 \nofMPsegments=\count119
 \nofMParguments=\count120
 \everyMPshowfont=\toks23
 \MPscratchCnt=\count121
-\MPscratchDim=\dimen134
+\MPscratchDim=\dimen132
 \MPnumerator=\count122
 \makeMPintoPDFobject=\count123
 \everyMPtoPDFconversion=\toks24
@@ -358,69 +347,69 @@ Package caption Info: End \AtBeginDocument code.
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./report.toc)
-\tf@toc=\write5
-\openout5 = `report.toc'.
+\tf@toc=\write4
+\openout4 = `report.toc'.
 
  [2] (./report.lof)
-\tf@lof=\write6
-\openout6 = `report.lof'.
+\tf@lof=\write5
+\openout5 = `report.lof'.
 
  (./report.lot)
-\tf@lot=\write7
-\openout7 = `report.lot'.
+\tf@lot=\write6
+\openout6 = `report.lot'.
 
  [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--76
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
-[5] [6] [7] <ressources/UML.png, id=207, 644.4075pt x 521.95pt>
+[5] [6] [7] <ressources/UML.png, id=220, 644.4075pt x 521.95pt>
 File: ressources/UML.png Graphic file (type png)
 
 <use ressources/UML.png>
-Package pdftex.def Info: ressources/UML.png used on input line 235.
+Package pdftex.def Info: ressources/UML.png used on input line 251.
 (pdftex.def)             Requested size: 345.0pt x 279.45154pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--237
+Underfull \hbox (badness 10000) in paragraph at lines 249--253
 
  []
 
 [8 <./ressources/UML.png>] [9]
-<ressources/t01.png, id=221, 881.2925pt x 545.03625pt>
+<ressources/t01.png, id=234, 881.2925pt x 545.03625pt>
 File: ressources/t01.png Graphic file (type png)
 
 <use ressources/t01.png>
-Package pdftex.def Info: ressources/t01.png used on input line 254.
+Package pdftex.def Info: ressources/t01.png used on input line 270.
 (pdftex.def)             Requested size: 345.0pt x 213.36168pt.
  [10 <./ressources/t01.png>]
-<ressources/analytical.png, id=228, 808.01875pt x 545.03625pt>
+<ressources/analytical.png, id=241, 808.01875pt x 545.03625pt>
 File: ressources/analytical.png Graphic file (type png)
 
 <use ressources/analytical.png>
-Package pdftex.def Info: ressources/analytical.png used on input line 310.
+Package pdftex.def Info: ressources/analytical.png used on input line 326.
 (pdftex.def)             Requested size: 345.0pt x 232.71434pt.
  [11 <./ressources/analytical.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 354--369
+Underfull \hbox (badness 10000) in paragraph at lines 370--385
 
  []
 
-[12] [13] [14] [15] [16]
-Overfull \hbox (4.08049pt too wide) in paragraph at lines 435--438
+[12] [13] [14] [15]
+Overfull \hbox (4.08049pt too wide) in paragraph at lines 476--479
 \OT1/cmtt/m/n/10 https://www.iist.ac.in/sites/default/files/people/parabolic.pd
 f\OT1/cmr/m/n/10 . 
  []
 
 /Users/augustinreille/Documents/WORKSPACE/CRANFIELD/ComputMeth/Assignment/repor
-t/report.tex:441: Misplaced alignment tab character &.
-l.441         Crank, J. &
+t/report.tex:482: Misplaced alignment tab character &.
+l.482         Crank, J. &
                           Nicolson, P. Adv Comput Math (1996) 6: 207.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -429,22 +418,22 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 457.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 457.
+[16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 500.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 500.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 500.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 500.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 093DC9EBD42AF9ECDEB6DB6C6051D1D7;1740.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
+(rerunfilecheck)             Checksum: 80BBB011371B59631086D06347F872A8;1901.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 500.
  ) 
 Here is how much of TeX's memory you used:
- 7293 strings out of 492995
- 109144 string characters out of 6132704
- 208749 words of memory out of 5000000
- 10706 multiletter control sequences out of 15000+600000
+ 7228 strings out of 492995
+ 108490 string characters out of 6132704
+ 208379 words of memory out of 5000000
+ 10642 multiletter control sequences out of 15000+600000
  10144 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,9n,40p,361b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -466,10 +455,10 @@ ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (18 pages, 350476 bytes).
+Output written on report.pdf (17 pages, 357224 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 71 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 368 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 
