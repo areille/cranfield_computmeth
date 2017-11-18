@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pdesolve',['PDESolve',['../class_p_d_e_solve.html#ae4ffb82f6502c303f1ffdb3831cc4f6d',1,'PDESolve::PDESolve()'],['../class_p_d_e_solve.html#a1cfac8cfbb30ee0bd1c9100a5640f87f',1,'PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
+  ['matrix',['Matrix',['../class_matrix.html#a2dba13c45127354c9f75ef576f49269b',1,'Matrix::Matrix()'],['../class_matrix.html#a135a15de1126d735bb95fcc839d739d7',1,'Matrix::Matrix(int Nrows, int Ncols)'],['../class_matrix.html#a765f4dcb51b6829311cc3e7576388423',1,'Matrix::Matrix(const Matrix &amp;m)']]]
 ];

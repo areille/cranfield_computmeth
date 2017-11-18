@@ -67,6 +67,8 @@ $(function() {
 <div class="title">PDEImplicit Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_p_d_e_implicit_8h_source.html">PDEImplicit.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for PDEImplicit:</div>
 <div class="dyncontent">
@@ -81,13 +83,13 @@ Inheritance diagram for PDEImplicit:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95e1d8572ae2356554f25633391f02f2"><td class="memItemLeft" align="right" valign="top"><a id="a95e1d8572ae2356554f25633391f02f2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PDEImplicit</b> (double D, double dx, double dt, double L, double T, double Text, double Tint)</td></tr>
+<tr class="memitem:a6eca74fdfc3e0173bc81562548bbbdc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_d_e_implicit.html#a6eca74fdfc3e0173bc81562548bbbdc9">PDEImplicit</a> ()</td></tr>
+<tr class="separator:a6eca74fdfc3e0173bc81562548bbbdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e1d8572ae2356554f25633391f02f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_d_e_implicit.html#a95e1d8572ae2356554f25633391f02f2">PDEImplicit</a> (double D, double dx, double dt, double L, double T, double Text, double Tint)</td></tr>
 <tr class="separator:a95e1d8572ae2356554f25633391f02f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace06b1a56c2766ca8d4bc95669d21d12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_d_e_implicit.html#ace06b1a56c2766ca8d4bc95669d21d12">solve</a> ()</td></tr>
 <tr class="separator:ace06b1a56c2766ca8d4bc95669d21d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60980fe1e316329ab95ad179fce5a88b"><td class="memItemLeft" align="right" valign="top"><a id="a60980fe1e316329ab95ad179fce5a88b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>advance</b> ()</td></tr>
+<tr class="memitem:a60980fe1e316329ab95ad179fce5a88b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_d_e_implicit.html#a60980fe1e316329ab95ad179fce5a88b">advance</a> ()</td></tr>
 <tr class="separator:a60980fe1e316329ab95ad179fce5a88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_p_d_e_solve"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_p_d_e_solve')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_p_d_e_solve.html">PDESolve</a></td></tr>
 <tr class="memitem:ae4ffb82f6502c303f1ffdb3831cc4f6d inherit pub_methods_class_p_d_e_solve"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_d_e_solve.html#ae4ffb82f6502c303f1ffdb3831cc4f6d">PDESolve</a> ()</td></tr>
@@ -167,7 +169,153 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ntime</b></td></tr>
 <a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><b>results</b></td></tr>
 <tr class="separator:a054590e2a2423ed31cc2cc9c23620701 inherit pro_attribs_class_p_d_e_solve"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A subclass of PDE Solver, specialized for implicit schemes.</p>
+<p>The PDE implicit class provides: <br />
+-basic constructors for creating a Solver object with all initial  and data (not meant to be used) <br />
+-a solve method which will solve the problem with all input values,  for implicit methods. <br />
+-a virtual advance method which take to the next time and space step. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6eca74fdfc3e0173bc81562548bbbdc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eca74fdfc3e0173bc81562548bbbdc9">&#9670;&nbsp;</a></span>PDEImplicit() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDEImplicit::PDEImplicit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Default constructor. Initialize an empty implicit methods solver. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_p_d_e_implicit.html#a95e1d8572ae2356554f25633391f02f2">PDEImplicit(double D, double dx, double dt, double L, double T, double Text, double Tint)</a> </dd></dl>
+
+</div>
+</div>
+<a id="a95e1d8572ae2356554f25633391f02f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95e1d8572ae2356554f25633391f02f2">&#9670;&nbsp;</a></span>PDEImplicit() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDEImplicit::PDEImplicit </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Alternate constructor. Should be used instead of the default one. Build an implicit solver with all the problem data, values and initial conditions. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_p_d_e_implicit.html#a6eca74fdfc3e0173bc81562548bbbdc9">PDEImplicit()</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>("value must be positive double") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">D</td><td>double. Diffusivity of the wall </td></tr>
+    <tr><td class="paramname">dx</td><td>double. Space step </td></tr>
+    <tr><td class="paramname">dt</td><td>double. Time step </td></tr>
+    <tr><td class="paramname">L</td><td>double. Thickness of the wall </td></tr>
+    <tr><td class="paramname">T</td><td>double. Study total time </td></tr>
+    <tr><td class="paramname">Text</td><td>double. External temperature </td></tr>
+    <tr><td class="paramname">Tint</td><td>double. Initial temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a60980fe1e316329ab95ad179fce5a88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60980fe1e316329ab95ad179fce5a88b">&#9670;&nbsp;</a></span>advance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void PDEImplicit::advance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Virtual advance method advance at next step </p>
+
+<p>Reimplemented in <a class="el" href="class_crank_nicholson_solve.html#a82fe6f2538bc90d62842d26736ba8707">CrankNicholsonSolve</a>, and <a class="el" href="class_laasonen_solve.html#af320ccb100c388621052d2a2cb57858a">LaasonenSolve</a>.</p>
+
+</div>
+</div>
 <a id="ace06b1a56c2766ca8d4bc95669d21d12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace06b1a56c2766ca8d4bc95669d21d12">&#9670;&nbsp;</a></span>solve()</h2>
 
@@ -190,7 +338,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ntime</b></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Virtual solve methods solves the problem and writes the results in a matrix </p>
+<p>Solve method solves the problem for implicit schemes and writes the results in a matrix </p>
 
 <p>Reimplemented from <a class="el" href="class_p_d_e_solve.html#a2fb309c3e7f35de2f639596f7fcb17cc">PDESolve</a>.</p>
 

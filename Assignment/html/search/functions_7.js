@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector',['Vector',['../class_vector.html#a6f80c73b5f18dcf3f8e36065bdc8b9e5',1,'Vector::Vector()'],['../class_vector.html#acbdf66550f2caa0a64e0b356fb63a277',1,'Vector::Vector(int Num)'],['../class_vector.html#a5f04e343b7306ad11f8a82c89b486764',1,'Vector::Vector(const Vector &amp;v)']]]
+  ['solve',['solve',['../class_p_d_e_explicit.html#a78282717c8230e9be65599865865e0c7',1,'PDEExplicit::solve()'],['../class_p_d_e_implicit.html#ace06b1a56c2766ca8d4bc95669d21d12',1,'PDEImplicit::solve()'],['../class_p_d_e_solve.html#a2fb309c3e7f35de2f639596f7fcb17cc',1,'PDESolve::solve()']]]
 ];

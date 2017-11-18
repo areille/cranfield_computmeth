@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniform_5fnorm',['uniform_norm',['../class_matrix.html#a43066c7fe6418aad40170b85415063e8',1,'Matrix::uniform_norm()'],['../class_vector.html#a50b72131eaf3698a9876d99ab6912a32',1,'Vector::uniform_norm()']]]
+  ['richardsonsolve',['RichardsonSolve',['../class_richardson_solve.html#a628a7f9104201f63094a49cb9d23b5ca',1,'RichardsonSolve::RichardsonSolve()'],['../class_richardson_solve.html#a181c71a169292bdba433af2564f763b5',1,'RichardsonSolve::RichardsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
 ];

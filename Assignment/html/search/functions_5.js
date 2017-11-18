@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['transpose',['transpose',['../class_matrix.html#a759661b75b9681f3a89ff75e27933b3a',1,'Matrix']]],
-  ['two_5fnorm',['two_norm',['../class_matrix.html#aac496af05ec7aa26afc2b9c6d0ab8b66',1,'Matrix::two_norm()'],['../class_vector.html#a4f501290a50d057bb6c57ea64d7e70a4',1,'Vector::two_norm()']]]
+  ['pdeexplicit',['PDEExplicit',['../class_p_d_e_explicit.html#a9adf9965c9e469d76b9d394128e4a5ea',1,'PDEExplicit::PDEExplicit()'],['../class_p_d_e_explicit.html#a8dd3f39d0a4d04a5b4ca0f8853f776f2',1,'PDEExplicit::PDEExplicit(double D, double dx, double dt, double L, double T, double Text, double Tint)']]],
+  ['pdeimplicit',['PDEImplicit',['../class_p_d_e_implicit.html#a6eca74fdfc3e0173bc81562548bbbdc9',1,'PDEImplicit::PDEImplicit()'],['../class_p_d_e_implicit.html#a95e1d8572ae2356554f25633391f02f2',1,'PDEImplicit::PDEImplicit(double D, double dx, double dt, double L, double T, double Text, double Tint)']]],
+  ['pdesolve',['PDESolve',['../class_p_d_e_solve.html#ae4ffb82f6502c303f1ffdb3831cc4f6d',1,'PDESolve::PDESolve()'],['../class_p_d_e_solve.html#a1cfac8cfbb30ee0bd1c9100a5640f87f',1,'PDESolve::PDESolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
 ];

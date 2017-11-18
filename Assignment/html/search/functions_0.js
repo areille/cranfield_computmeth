@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['get_5fres',['get_res',['../class_p_d_e_solve.html#adece98ce0230132033efb28ecd629cb0',1,'PDESolve']]],
-  ['getncols',['getNcols',['../class_matrix.html#ae0a5f2154953b8d129a90b04f91d9079',1,'Matrix']]],
-  ['getnrows',['getNrows',['../class_matrix.html#a711f84a1c62832d9d197d78c9855a276',1,'Matrix']]],
-  ['getsize',['getSize',['../class_vector.html#afbb7966ec4107c43ec15cccc47fcaef7',1,'Vector']]]
+  ['advance',['advance',['../class_crank_nicholson_solve.html#a82fe6f2538bc90d62842d26736ba8707',1,'CrankNicholsonSolve::advance()'],['../class_dufort_frankel_solve.html#ab89cf099385aa161de262fbe4db284d8',1,'DufortFrankelSolve::advance()'],['../class_laasonen_solve.html#af320ccb100c388621052d2a2cb57858a',1,'LaasonenSolve::advance()'],['../class_p_d_e_explicit.html#aed238f52510878474c02681904013dd3',1,'PDEExplicit::advance()'],['../class_p_d_e_implicit.html#a60980fe1e316329ab95ad179fce5a88b',1,'PDEImplicit::advance()'],['../class_richardson_solve.html#adaedf7448ffb94b08690ce6e878ab33c',1,'RichardsonSolve::advance()']]]
 ];

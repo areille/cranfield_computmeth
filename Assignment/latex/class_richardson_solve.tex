@@ -1,5 +1,9 @@
 \hypertarget{class_richardson_solve}{}\section{Richardson\+Solve Class Reference}
 \label{class_richardson_solve}\index{Richardson\+Solve@{Richardson\+Solve}}
+
+
+{\ttfamily \#include $<$Richardson\+Solve.\+h$>$}
+
 Inheritance diagram for Richardson\+Solve\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,13 +13,84 @@ Inheritance diagram for Richardson\+Solve\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_richardson_solve_a181c71a169292bdba433af2564f763b5}\label{class_richardson_solve_a181c71a169292bdba433af2564f763b5}} 
-{\bfseries Richardson\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
+\hyperlink{class_richardson_solve_a628a7f9104201f63094a49cb9d23b5ca}{Richardson\+Solve} ()
 \item 
-\mbox{\Hypertarget{class_richardson_solve_adaedf7448ffb94b08690ce6e878ab33c}\label{class_richardson_solve_adaedf7448ffb94b08690ce6e878ab33c}} 
-double {\bfseries advance} (int k, int l) const
+\hyperlink{class_richardson_solve_a181c71a169292bdba433af2564f763b5}{Richardson\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
+\item 
+double \hyperlink{class_richardson_solve_adaedf7448ffb94b08690ce6e878ab33c}{advance} (int k, int l) const
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A subclass of P\+DE Explicit solver, specialized for Richardson scheme.
+
+The P\+DE explicit class provides\+: ~\newline
+-\/basic constructors for creating a Solver object with all initial  and data (not meant to be used) ~\newline
+-\/a solve method which will solve the problem with all input values,  with Richardson scheme. ~\newline
+-\/a advance method which take to the next time and space step. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_richardson_solve_a628a7f9104201f63094a49cb9d23b5ca}\label{class_richardson_solve_a628a7f9104201f63094a49cb9d23b5ca}} 
+\index{Richardson\+Solve@{Richardson\+Solve}!Richardson\+Solve@{Richardson\+Solve}}
+\index{Richardson\+Solve@{Richardson\+Solve}!Richardson\+Solve@{Richardson\+Solve}}
+\subsubsection{\texorpdfstring{Richardson\+Solve()}{RichardsonSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Richardson\+Solve\+::\+Richardson\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Initialize an empty Richardson scheme solver. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_richardson_solve_a181c71a169292bdba433af2564f763b5}{Richardson\+Solve(double D, double dx, double dt, double L, double T, double Text, double Tint)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_richardson_solve_a181c71a169292bdba433af2564f763b5}\label{class_richardson_solve_a181c71a169292bdba433af2564f763b5}} 
+\index{Richardson\+Solve@{Richardson\+Solve}!Richardson\+Solve@{Richardson\+Solve}}
+\index{Richardson\+Solve@{Richardson\+Solve}!Richardson\+Solve@{Richardson\+Solve}}
+\subsubsection{\texorpdfstring{Richardson\+Solve()}{RichardsonSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Richardson\+Solve\+::\+Richardson\+Solve (\begin{DoxyParamCaption}\item[{double}]{D,  }\item[{double}]{dx,  }\item[{double}]{dt,  }\item[{double}]{L,  }\item[{double}]{T,  }\item[{double}]{Text,  }\item[{double}]{Tint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alternate constructor. Should be used instead of the default one. Build an Richardson solver with all the problem data, values and initial conditions. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_richardson_solve_a628a7f9104201f63094a49cb9d23b5ca}{Richardson\+Solve()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & (\char`\"{}value must be positive double\char`\"{}) \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em D} & double. Diffusivity of the wall \\
+\hline
+{\em dx} & double. Space step \\
+\hline
+{\em dt} & double. Time step \\
+\hline
+{\em L} & double. Thickness of the wall \\
+\hline
+{\em T} & double. Study total time \\
+\hline
+{\em Text} & double. External temperature \\
+\hline
+{\em Tint} & double. Initial temperature \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_richardson_solve_adaedf7448ffb94b08690ce6e878ab33c}\label{class_richardson_solve_adaedf7448ffb94b08690ce6e878ab33c}} 
+\index{Richardson\+Solve@{Richardson\+Solve}!advance@{advance}}
+\index{advance@{advance}!Richardson\+Solve@{Richardson\+Solve}}
+\subsubsection{\texorpdfstring{advance()}{advance()}}
+{\footnotesize\ttfamily double Richardson\+Solve\+::advance (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{l }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Richardson scheme advance method advance at step k in time and step l in space 
+\begin{DoxyParams}{Parameters}
+{\em k} & int. Time step you want to access \\
+\hline
+{\em l} & int. Space step you want to access \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_p_d_e_explicit_aed238f52510878474c02681904013dd3}{P\+D\+E\+Explicit}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solve',['solve',['../class_p_d_e_explicit.html#a78282717c8230e9be65599865865e0c7',1,'PDEExplicit::solve()'],['../class_p_d_e_implicit.html#ace06b1a56c2766ca8d4bc95669d21d12',1,'PDEImplicit::solve()'],['../class_p_d_e_solve.html#a2fb309c3e7f35de2f639596f7fcb17cc',1,'PDESolve::solve()']]]
+  ['richardsonsolve',['RichardsonSolve',['../class_richardson_solve.html',1,'RichardsonSolve'],['../class_richardson_solve.html#a628a7f9104201f63094a49cb9d23b5ca',1,'RichardsonSolve::RichardsonSolve()'],['../class_richardson_solve.html#a181c71a169292bdba433af2564f763b5',1,'RichardsonSolve::RichardsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
 ];

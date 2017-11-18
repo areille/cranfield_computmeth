@@ -67,7 +67,7 @@ A Solver class for one-\/dimensional P\+DE solving. ~\newline
  It has been designed only to solve one problem using differents . The problem is the evolution of the temperature  a wall as the function of time.
 
 The \hyperlink{class_p_d_e_solve}{P\+D\+E\+Solve} class provides\+: ~\newline
--\/basic constructors for creating a Solver object with all initial  and data ~\newline
+-\/basic constructors for creating a Solver object with all initial  and data (not meant to be used) ~\newline
 -\/a solve virtual method which will differ if the scheme is  or explicit ~\newline
 -\/a method which returns the results of the problems 
 
@@ -130,7 +130,7 @@ Normal public get method get the results matrix \begin{DoxyReturn}{Returns}
 \subsubsection{\texorpdfstring{solve()}{solve()}}
 {\footnotesize\ttfamily virtual void P\+D\+E\+Solve\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Virtual solve methods solves the problem and writes the results in a matrix 
+Virtual solve method solves the problem and writes the results in a matrix 
 
 Reimplemented in \hyperlink{class_p_d_e_implicit_ace06b1a56c2766ca8d4bc95669d21d12}{P\+D\+E\+Implicit}, and \hyperlink{class_p_d_e_explicit_a78282717c8230e9be65599865865e0c7}{P\+D\+E\+Explicit}.
 

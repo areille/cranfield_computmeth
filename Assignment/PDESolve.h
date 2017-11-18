@@ -13,7 +13,7 @@ using namespace std;
  * 
  * The PDESolve class provides:
  * \n-basic constructors for creating a Solver object with all initial
- * \nconditions and data
+ * \nconditions and data (not meant to be used)
  * \n-a solve virtual method which will differ if the scheme is
  * \nimplicit or explicit
  * \n-a method which returns the results of the problems 
@@ -57,7 +57,7 @@ public:
   // VIRTUAL METHODS
 
   /**
-   * Virtual solve methods
+   * Virtual solve method
    * solves the problem and writes the results in a matrix
    * 
   */
