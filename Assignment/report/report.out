@@ -12,8 +12,16 @@
 \BOOKMARK [2][-]{subsection.3.1}{Schemes study}{section.3}% 12
 \BOOKMARK [2][-]{subsection.3.2}{Laasonen method : effect of the step time}{section.3}% 13
 \BOOKMARK [1][-]{section.4}{Discussion}{}% 14
-\BOOKMARK [1][-]{section.5}{Future work}{}% 15
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 16
-\BOOKMARK [1][-]{section.7}{Aknowledgments}{}% 17
-\BOOKMARK [1][-]{section.8}{References}{}% 18
-\BOOKMARK [1][-]{section.9}{Appendices}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Analytical solution}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Computational study}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.1}{LU factorization and solving}{subsection.4.2}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Vectors}{subsection.4.2}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Schemes study}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Richardson scheme}{subsection.4.3}% 20
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Dufort-Frankel versus other schemes}{subsection.4.3}% 21
+\BOOKMARK [2][-]{subsection.4.4}{Laasonnen method : effect of the step time}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{Future work}{}% 23
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 24
+\BOOKMARK [1][-]{section.7}{Aknowledgments}{}% 25
+\BOOKMARK [1][-]{section.8}{References}{}% 26
+\BOOKMARK [1][-]{section.9}{Appendices}{}% 27
