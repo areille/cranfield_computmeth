@@ -87,7 +87,7 @@
         \]
         This is how the matrix is initialized, according to initial conditions.
         For most of the used schemes, we need two previous time steps to calculate the current step.
-        An order one scheme is used to find the second line of the matrix:
+        An order one scheme (FTCS) is used to find the second line of the matrix:
         \begin{equation}
             T_{i,1} = \frac{\alpha}{2} (T_{i+1,0} + T_{i-1,0}) + (1-\alpha)T_{i,0}
         \end{equation}
@@ -109,7 +109,7 @@
         \subsection{Explicit schemes}
             For both of the explicit schemes used (Dufort-Frankel and Richardson schemes), the solving
             is run the same way : with a double for-loop, the matrix is filled up. The only thing that change
-            is the way we advance in time and space.
+            is the way we advance through time and space.
 
             \subsubsection{Dufort-Frankel}
                 Explicitly, for Dufort-Frankel method, we have:
@@ -302,8 +302,8 @@
             \end{tabular}
         \end{table}
 
-        We observe that the error is globally decreasing as time increase. The most accurate methods appears to 
-        be the Crank-Nicholson method, then the Laasonen method.
+        We observe that the error is globally decreasing as time increase. The most accurate method appears to 
+        be the Dufort-Frankel method, then the Crank-Nicholson method, then the Laasonen method.
 
         \subsection{Laasonen method : effect of the step time}
         \begin{figure}[H]
@@ -333,14 +333,15 @@
 
         \begin{table}[H]
             \centering
-            \caption{Effect of time step increasing }
-            \begin{tabular}{|l|l|l|l|l|l|l|}
+            \caption{Laasonen - effect of time step increasing }
+            \label{table:laas}
+            \begin{tabular}{|l|l|l|l|l|l|}
                 \hline
-                Errors   & t = 0h & t = 0,1h & t = 0,2h  & t = 0,3h  & t = 0,4h & t = 0,5h \\ \hline
-                $\Delta$t=0,01  & 0,21\% & 1,72\%   & 1,05\%  & 2,83\%  & 0,64\% & 0,55\% \\ \hline
-                $\Delta$t=0,025 & 0,21\% & 4,53\%   & 2,76\%  & 0,81\%  & 1,69\% & 1,45\% \\ \hline
-                $\Delta$t=0,05  & 0,21\% & 9,75\%   & 5,84\%  & 4,95\%  & 3,50\% & 2,98\% \\ \hline
-                $\Delta$t=0,1   & 0,21\% & 53,96\%  & 12,80\% & 16,30\% & 7,35\% & 6,19\% \\ \hline
+                Errors    & t = 0,1h & t = 0,2h  & t = 0,3h  & t = 0,4h & t = 0,5h \\ \hline
+                $\Delta$t=0,01  & 1,72\%   & 1,05\%  & 2,83\%  & 0,64\% & 0,55\% \\ \hline
+                $\Delta$t=0,025 & 4,53\%   & 2,76\%  & 0,81\%  & 1,69\% & 1,45\% \\ \hline
+                $\Delta$t=0,05  & 9,75\%   & 5,84\%  & 4,95\%  & 3,50\% & 2,98\% \\ \hline
+                $\Delta$t=0,1   & 53,96\%  & 12,80\% & 16,30\% & 7,35\% & 6,19\% \\ \hline
             \end{tabular}
         \end{table}
 
@@ -353,7 +354,7 @@
             First thing that should be considered is that the analytical solution should not be
             considered as the perfect exact solution, because of several things.
             \\
-            First, the analytical solution is calculated by the computer, so there is some numerical error.
+            First, the analytical solution is calculated by the computer, so there may be some numerical error.
             \\
             Secondly, we have to consider the calculation of the sum inside equation \eqref{eq:analytical}.
             Indeed, as $m$ should be infinite, the biggest it is is the best. However, as I choose to calculate
@@ -389,11 +390,11 @@
                 \begin{equation}
                     T_i^{n+1} = T_i^{n-1} + \frac{2D\delta t}{\delta x^2}[T_{i+1}^n - (T_i^{n+1}+T_i^{n-1}) + T_{i-1}^n]
                 \end{equation}
-                Which is equivalent as \eqref{eq:df}, the Dufort-Frankel scheme, which is a stable scheme.
+                Which is equivalent as \eqref{eq:df}, the Dufort-Frankel scheme, which is a stable scheme \cite{df}.
                 \\
                 So we can see that by replacing the $T_{i}^n$ term in an unstable scheme by its average in time, we obtain 
                 a stable scheme. This is a good thing to know as majority of explicit schemes are unstable. However, they are
-                easy to test, so that we can find some way to make them stable if they are not.
+                easy to test, so that we can easily find some way to make them stable if they are not.
             \subsubsection{Dufort-Frankel versus other schemes}
                 It appears that Dufort-Frankel scheme is the most accurate of the studied schemes. One explanation to those
                 results is that with this method, accurate solutions are obtained if $\Delta t << \Delta x$ \cite{df}.
@@ -404,7 +405,10 @@
 
             
         \subsection{Laasonnen method : effect of the step time}
-                Laasonen has a good error response, however it has the disadvantage of a poor accuracy.\cite{laas}
+            As we see on Table \ref{table:laas}, for a fixed $\Delta t$, the error tends to decrease as time grows. However,
+            for a fixed time, we can see that increasing the time step make the error bigger. We can assume that we need a
+            quite small time step to have good results with this scheme. This can be explained by the fact that
+            Laasonen has a good error response, however it has the disadvantage of a poor accuracy \cite{laas}.
     % Future work
     \newpage
     \section{Future work}
@@ -432,13 +436,14 @@
         \\\texttt{https://www.iist.ac.in/sites/default/files/people/parabolic.pdf}.
         \\Last visit date : 18/11/2017
 
-        \bibitem{laas} 
-        D. Britz \& Jorg Strutwolf, \textit{Digital Simulation in Electrochemistry}.
-        Springer, 2006
-
+        
         \bibitem{crank} 
         Crank, J. & Nicolson, P. Adv Comput Math (1996) 6: 207. 
         \\\texttt{https://doi.org/10.1007/BF02127704}
+
+        \bibitem{laas} 
+        D. Britz \& Jorg Strutwolf, \textit{Digital Simulation in Electrochemistry}.
+        Springer, 2006
         % \bibitem{einstein} 
         % Albert Einstein. 
         % \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
