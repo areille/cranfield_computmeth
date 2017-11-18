@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dufortfrankelsolve',['DufortFrankelSolve',['../class_dufort_frankel_solve.html#ae348a9dda0114799f73f65ad852c19f9',1,'DufortFrankelSolve::DufortFrankelSolve()'],['../class_dufort_frankel_solve.html#a2081c0668116f15316e61f95c86bd644',1,'DufortFrankelSolve::DufortFrankelSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
+  ['cranknicholsonsolve',['CrankNicholsonSolve',['../class_crank_nicholson_solve.html#a2c3330fe7e6925da4148d314280ed021',1,'CrankNicholsonSolve::CrankNicholsonSolve()'],['../class_crank_nicholson_solve.html#a0608d2d606626bf02c580f87b5a467ed',1,'CrankNicholsonSolve::CrankNicholsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
 ];

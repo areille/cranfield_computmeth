@@ -65,6 +65,8 @@ $(function() {
 <div class="title">LaasonenSolve Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_laasonen_solve_8h_source.html">LaasonenSolve.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LaasonenSolve:</div>
 <div class="dyncontent">
@@ -78,8 +80,9 @@ Inheritance diagram for LaasonenSolve:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afee5334bc58eaf72c312d73ff3e8829c"><td class="memItemLeft" align="right" valign="top"><a id="afee5334bc58eaf72c312d73ff3e8829c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LaasonenSolve</b> (double D, double dx, double dt, double L, double T, double Text, double Tint)</td></tr>
+<tr class="memitem:ab71dba8e7f61306851762f35cce40e53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_laasonen_solve.html#ab71dba8e7f61306851762f35cce40e53">LaasonenSolve</a> ()</td></tr>
+<tr class="separator:ab71dba8e7f61306851762f35cce40e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee5334bc58eaf72c312d73ff3e8829c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_laasonen_solve.html#afee5334bc58eaf72c312d73ff3e8829c">LaasonenSolve</a> (double D, double dx, double dt, double L, double T, double Text, double Tint)</td></tr>
 <tr class="separator:afee5334bc58eaf72c312d73ff3e8829c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af320ccb100c388621052d2a2cb57858a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_laasonen_solve.html#af320ccb100c388621052d2a2cb57858a">advance</a> ()</td></tr>
 <tr class="separator:af320ccb100c388621052d2a2cb57858a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +170,123 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ntime</b></td></tr>
 <a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><b>results</b></td></tr>
 <tr class="separator:a054590e2a2423ed31cc2cc9c23620701 inherit pro_attribs_class_p_d_e_solve"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A subclass of PDE Implicit solver, specialized for Richardson scheme.</p>
+<p>The Laasonen class provides: <br />
+-basic constructors for creating a Solver object with all initial  and data (not meant to be used)  with Laasonen scheme. <br />
+-a advance method which take to the next time and space step. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab71dba8e7f61306851762f35cce40e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71dba8e7f61306851762f35cce40e53">&#9670;&nbsp;</a></span>LaasonenSolve() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LaasonenSolve::LaasonenSolve </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Default constructor. Initialize an empty Laasonen scheme solver. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_laasonen_solve.html#afee5334bc58eaf72c312d73ff3e8829c">LaasonenSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)</a> </dd></dl>
+
+</div>
+</div>
+<a id="afee5334bc58eaf72c312d73ff3e8829c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee5334bc58eaf72c312d73ff3e8829c">&#9670;&nbsp;</a></span>LaasonenSolve() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LaasonenSolve::LaasonenSolve </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Alternate constructor. Should be used instead of the default one. Build an Laasonen solver with all the problem data, values and initial conditions. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_laasonen_solve.html#ab71dba8e7f61306851762f35cce40e53">LaasonenSolve()</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>("value must be positive double") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">D</td><td>double. Diffusivity of the wall </td></tr>
+    <tr><td class="paramname">dx</td><td>double. Space step </td></tr>
+    <tr><td class="paramname">dt</td><td>double. Time step </td></tr>
+    <tr><td class="paramname">L</td><td>double. Thickness of the wall </td></tr>
+    <tr><td class="paramname">T</td><td>double. Study total time </td></tr>
+    <tr><td class="paramname">Text</td><td>double. External temperature </td></tr>
+    <tr><td class="paramname">Tint</td><td>double. Initial temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="af320ccb100c388621052d2a2cb57858a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af320ccb100c388621052d2a2cb57858a">&#9670;&nbsp;</a></span>advance()</h2>
@@ -190,7 +310,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ntime</b></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Virtual advance method advance at next step </p>
+<p>Laasonen scheme advance method advance in time and space </p>
 
 <p>Reimplemented from <a class="el" href="class_p_d_e_implicit.html#a60980fe1e316329ab95ad179fce5a88b">PDEImplicit</a>.</p>
 

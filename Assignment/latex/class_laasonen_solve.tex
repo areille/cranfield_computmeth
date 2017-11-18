@@ -1,5 +1,9 @@
 \hypertarget{class_laasonen_solve}{}\section{Laasonen\+Solve Class Reference}
 \label{class_laasonen_solve}\index{Laasonen\+Solve@{Laasonen\+Solve}}
+
+
+{\ttfamily \#include $<$Laasonen\+Solve.\+h$>$}
+
 Inheritance diagram for Laasonen\+Solve\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +13,63 @@ Inheritance diagram for Laasonen\+Solve\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_laasonen_solve_afee5334bc58eaf72c312d73ff3e8829c}\label{class_laasonen_solve_afee5334bc58eaf72c312d73ff3e8829c}} 
-{\bfseries Laasonen\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
+\hyperlink{class_laasonen_solve_ab71dba8e7f61306851762f35cce40e53}{Laasonen\+Solve} ()
+\item 
+\hyperlink{class_laasonen_solve_afee5334bc58eaf72c312d73ff3e8829c}{Laasonen\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
 \item 
 void \hyperlink{class_laasonen_solve_af320ccb100c388621052d2a2cb57858a}{advance} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A subclass of P\+DE Implicit solver, specialized for Richardson scheme.
+
+The Laasonen class provides\+: ~\newline
+-\/basic constructors for creating a Solver object with all initial  and data (not meant to be used)  with Laasonen scheme. ~\newline
+-\/a advance method which take to the next time and space step. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_laasonen_solve_ab71dba8e7f61306851762f35cce40e53}\label{class_laasonen_solve_ab71dba8e7f61306851762f35cce40e53}} 
+\index{Laasonen\+Solve@{Laasonen\+Solve}!Laasonen\+Solve@{Laasonen\+Solve}}
+\index{Laasonen\+Solve@{Laasonen\+Solve}!Laasonen\+Solve@{Laasonen\+Solve}}
+\subsubsection{\texorpdfstring{Laasonen\+Solve()}{LaasonenSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Laasonen\+Solve\+::\+Laasonen\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Initialize an empty Laasonen scheme solver. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_laasonen_solve_afee5334bc58eaf72c312d73ff3e8829c}{Laasonen\+Solve(double D, double dx, double dt, double L, double T, double Text, double Tint)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_laasonen_solve_afee5334bc58eaf72c312d73ff3e8829c}\label{class_laasonen_solve_afee5334bc58eaf72c312d73ff3e8829c}} 
+\index{Laasonen\+Solve@{Laasonen\+Solve}!Laasonen\+Solve@{Laasonen\+Solve}}
+\index{Laasonen\+Solve@{Laasonen\+Solve}!Laasonen\+Solve@{Laasonen\+Solve}}
+\subsubsection{\texorpdfstring{Laasonen\+Solve()}{LaasonenSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Laasonen\+Solve\+::\+Laasonen\+Solve (\begin{DoxyParamCaption}\item[{double}]{D,  }\item[{double}]{dx,  }\item[{double}]{dt,  }\item[{double}]{L,  }\item[{double}]{T,  }\item[{double}]{Text,  }\item[{double}]{Tint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alternate constructor. Should be used instead of the default one. Build an Laasonen solver with all the problem data, values and initial conditions. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_laasonen_solve_ab71dba8e7f61306851762f35cce40e53}{Laasonen\+Solve()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & (\char`\"{}value must be positive double\char`\"{}) \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em D} & double. Diffusivity of the wall \\
+\hline
+{\em dx} & double. Space step \\
+\hline
+{\em dt} & double. Time step \\
+\hline
+{\em L} & double. Thickness of the wall \\
+\hline
+{\em T} & double. Study total time \\
+\hline
+{\em Text} & double. External temperature \\
+\hline
+{\em Tint} & double. Initial temperature \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -24,7 +79,7 @@ void \hyperlink{class_laasonen_solve_af320ccb100c388621052d2a2cb57858a}{advance}
 \subsubsection{\texorpdfstring{advance()}{advance()}}
 {\footnotesize\ttfamily void Laasonen\+Solve\+::advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Virtual advance method advance at next step 
+Laasonen scheme advance method advance in time and space 
 
 Reimplemented from \hyperlink{class_p_d_e_implicit_a60980fe1e316329ab95ad179fce5a88b}{P\+D\+E\+Implicit}.
 

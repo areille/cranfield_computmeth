@@ -65,6 +65,8 @@ $(function() {
 <div class="title">CrankNicholsonSolve Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_crank_nicholson_solve_8h_source.html">CrankNicholsonSolve.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CrankNicholsonSolve:</div>
 <div class="dyncontent">
@@ -78,8 +80,9 @@ Inheritance diagram for CrankNicholsonSolve:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0608d2d606626bf02c580f87b5a467ed"><td class="memItemLeft" align="right" valign="top"><a id="a0608d2d606626bf02c580f87b5a467ed"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CrankNicholsonSolve</b> (double D, double dx, double dt, double L, double T, double Text, double Tint)</td></tr>
+<tr class="memitem:a2c3330fe7e6925da4148d314280ed021"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crank_nicholson_solve.html#a2c3330fe7e6925da4148d314280ed021">CrankNicholsonSolve</a> ()</td></tr>
+<tr class="separator:a2c3330fe7e6925da4148d314280ed021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0608d2d606626bf02c580f87b5a467ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crank_nicholson_solve.html#a0608d2d606626bf02c580f87b5a467ed">CrankNicholsonSolve</a> (double D, double dx, double dt, double L, double T, double Text, double Tint)</td></tr>
 <tr class="separator:a0608d2d606626bf02c580f87b5a467ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82fe6f2538bc90d62842d26736ba8707"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crank_nicholson_solve.html#a82fe6f2538bc90d62842d26736ba8707">advance</a> ()</td></tr>
 <tr class="separator:a82fe6f2538bc90d62842d26736ba8707"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +170,111 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ntime</b></td></tr>
 <a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><b>results</b></td></tr>
 <tr class="separator:a054590e2a2423ed31cc2cc9c23620701 inherit pro_attribs_class_p_d_e_solve"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A subclass of PDE Implicit solver, specialized for Richardson scheme.</p>
+<p>The Crank Nicholson class provides: <br />
+-basic constructors for creating a Solver object with all initial  and data (not meant to be used)  with Crank-Nicholson scheme. <br />
+-a advance method which take to the next time and space step. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2c3330fe7e6925da4148d314280ed021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3330fe7e6925da4148d314280ed021">&#9670;&nbsp;</a></span>CrankNicholsonSolve() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CrankNicholsonSolve::CrankNicholsonSolve </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Default constructor. Initialize an empty Crank-Nicholson scheme solver. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_crank_nicholson_solve.html#a0608d2d606626bf02c580f87b5a467ed">CrankNicholsonSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)</a> </dd></dl>
+
+</div>
+</div>
+<a id="a0608d2d606626bf02c580f87b5a467ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0608d2d606626bf02c580f87b5a467ed">&#9670;&nbsp;</a></span>CrankNicholsonSolve() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CrankNicholsonSolve::CrankNicholsonSolve </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Alternate constructor. Should be used instead of the default one. Build an Crank Nicholson solver with all the problem data, values and initial conditions. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_crank_nicholson_solve.html#a2c3330fe7e6925da4148d314280ed021">CrankNicholsonSolve()</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>("value must be positive double") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a82fe6f2538bc90d62842d26736ba8707"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82fe6f2538bc90d62842d26736ba8707">&#9670;&nbsp;</a></span>advance()</h2>
@@ -190,7 +298,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ntime</b></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Virtual advance method advance at next step </p>
+<p>Crank-Nicholson scheme advance method advance in time and space </p>
 
 <p>Reimplemented from <a class="el" href="class_p_d_e_implicit.html#a60980fe1e316329ab95ad179fce5a88b">PDEImplicit</a>.</p>
 

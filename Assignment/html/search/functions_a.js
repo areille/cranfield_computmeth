@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector',['Vector',['../class_vector.html#a6f80c73b5f18dcf3f8e36065bdc8b9e5',1,'Vector::Vector()'],['../class_vector.html#acbdf66550f2caa0a64e0b356fb63a277',1,'Vector::Vector(int Num)'],['../class_vector.html#a5f04e343b7306ad11f8a82c89b486764',1,'Vector::Vector(const Vector &amp;v)']]]
+  ['transpose',['transpose',['../class_matrix.html#a759661b75b9681f3a89ff75e27933b3a',1,'Matrix']]],
+  ['two_5fnorm',['two_norm',['../class_matrix.html#aac496af05ec7aa26afc2b9c6d0ab8b66',1,'Matrix::two_norm()'],['../class_vector.html#a4f501290a50d057bb6c57ea64d7e70a4',1,'Vector::two_norm()']]]
 ];

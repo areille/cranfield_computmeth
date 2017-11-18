@@ -25,9 +25,8 @@ double \hyperlink{class_dufort_frankel_solve_ab89cf099385aa161de262fbe4db284d8}{
 \subsection{Detailed Description}
 A subclass of P\+DE Explicit solver, specialized for Dufort-\/\+Frankel scheme.
 
-The P\+DE explicit class provides\+: ~\newline
--\/basic constructors for creating a Solver object with all initial  and data (not meant to be used) ~\newline
--\/a solve method which will solve the problem with all input values,  with Dufort-\/\+Frankel scheme. ~\newline
+The Dufort-\/\+Frankel class provides\+: ~\newline
+-\/basic constructors for creating a Solver object with all initial  and data (not meant to be used)  with Dufort-\/\+Frankel scheme. ~\newline
 -\/a advance method which take to the next time and space step. 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -80,7 +79,7 @@ Alternate constructor. Should be used instead of the default one. Build an Dufor
 \subsubsection{\texorpdfstring{advance()}{advance()}}
 {\footnotesize\ttfamily double Dufort\+Frankel\+Solve\+::advance (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{l }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Richardson scheme advance method advance at step k in time and step l in space 
+Dufort scheme advance method advance at step k in time and step l in space 
 \begin{DoxyParams}{Parameters}
 {\em k} & int. Time step you want to access \\
 \hline

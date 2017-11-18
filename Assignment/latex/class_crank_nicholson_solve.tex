@@ -1,5 +1,9 @@
 \hypertarget{class_crank_nicholson_solve}{}\section{Crank\+Nicholson\+Solve Class Reference}
 \label{class_crank_nicholson_solve}\index{Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}}
+
+
+{\ttfamily \#include $<$Crank\+Nicholson\+Solve.\+h$>$}
+
 Inheritance diagram for Crank\+Nicholson\+Solve\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +13,46 @@ Inheritance diagram for Crank\+Nicholson\+Solve\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_crank_nicholson_solve_a0608d2d606626bf02c580f87b5a467ed}\label{class_crank_nicholson_solve_a0608d2d606626bf02c580f87b5a467ed}} 
-{\bfseries Crank\+Nicholson\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
+\hyperlink{class_crank_nicholson_solve_a2c3330fe7e6925da4148d314280ed021}{Crank\+Nicholson\+Solve} ()
+\item 
+\hyperlink{class_crank_nicholson_solve_a0608d2d606626bf02c580f87b5a467ed}{Crank\+Nicholson\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
 \item 
 void \hyperlink{class_crank_nicholson_solve_a82fe6f2538bc90d62842d26736ba8707}{advance} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A subclass of P\+DE Implicit solver, specialized for Richardson scheme.
+
+The Crank Nicholson class provides\+: ~\newline
+-\/basic constructors for creating a Solver object with all initial  and data (not meant to be used)  with Crank-\/\+Nicholson scheme. ~\newline
+-\/a advance method which take to the next time and space step. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crank_nicholson_solve_a2c3330fe7e6925da4148d314280ed021}\label{class_crank_nicholson_solve_a2c3330fe7e6925da4148d314280ed021}} 
+\index{Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}!Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}}
+\index{Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}!Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}}
+\subsubsection{\texorpdfstring{Crank\+Nicholson\+Solve()}{CrankNicholsonSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Crank\+Nicholson\+Solve\+::\+Crank\+Nicholson\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Initialize an empty Crank-\/\+Nicholson scheme solver. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_crank_nicholson_solve_a0608d2d606626bf02c580f87b5a467ed}{Crank\+Nicholson\+Solve(double D, double dx, double dt, double L, double T, double Text, double Tint)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_crank_nicholson_solve_a0608d2d606626bf02c580f87b5a467ed}\label{class_crank_nicholson_solve_a0608d2d606626bf02c580f87b5a467ed}} 
+\index{Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}!Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}}
+\index{Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}!Crank\+Nicholson\+Solve@{Crank\+Nicholson\+Solve}}
+\subsubsection{\texorpdfstring{Crank\+Nicholson\+Solve()}{CrankNicholsonSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Crank\+Nicholson\+Solve\+::\+Crank\+Nicholson\+Solve (\begin{DoxyParamCaption}\item[{double}]{D,  }\item[{double}]{dx,  }\item[{double}]{dt,  }\item[{double}]{L,  }\item[{double}]{T,  }\item[{double}]{Text,  }\item[{double}]{Tint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alternate constructor. Should be used instead of the default one. Build an Crank Nicholson solver with all the problem data, values and initial conditions. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_crank_nicholson_solve_a2c3330fe7e6925da4148d314280ed021}{Crank\+Nicholson\+Solve()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & (\char`\"{}value must be positive double\char`\"{}) \\
+\hline
+\end{DoxyExceptions}
 
 
 \subsection{Member Function Documentation}
@@ -24,7 +62,7 @@ void \hyperlink{class_crank_nicholson_solve_a82fe6f2538bc90d62842d26736ba8707}{a
 \subsubsection{\texorpdfstring{advance()}{advance()}}
 {\footnotesize\ttfamily void Crank\+Nicholson\+Solve\+::advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Virtual advance method advance at next step 
+Crank-\/\+Nicholson scheme advance method advance in time and space 
 
 Reimplemented from \hyperlink{class_p_d_e_implicit_a60980fe1e316329ab95ad179fce5a88b}{P\+D\+E\+Implicit}.
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniform_5fnorm',['uniform_norm',['../class_matrix.html#a43066c7fe6418aad40170b85415063e8',1,'Matrix::uniform_norm()'],['../class_vector.html#a50b72131eaf3698a9876d99ab6912a32',1,'Vector::uniform_norm()']]]
+  ['solve',['solve',['../class_p_d_e_explicit.html#a78282717c8230e9be65599865865e0c7',1,'PDEExplicit::solve()'],['../class_p_d_e_implicit.html#ace06b1a56c2766ca8d4bc95669d21d12',1,'PDEImplicit::solve()'],['../class_p_d_e_solve.html#a2fb309c3e7f35de2f639596f7fcb17cc',1,'PDESolve::solve()']]]
 ];

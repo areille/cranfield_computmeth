@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['get_5fres',['get_res',['../class_p_d_e_solve.html#adece98ce0230132033efb28ecd629cb0',1,'PDESolve']]],
-  ['getncols',['getNcols',['../class_matrix.html#ae0a5f2154953b8d129a90b04f91d9079',1,'Matrix']]],
-  ['getnrows',['getNrows',['../class_matrix.html#a711f84a1c62832d9d197d78c9855a276',1,'Matrix']]],
-  ['getsize',['getSize',['../class_vector.html#afbb7966ec4107c43ec15cccc47fcaef7',1,'Vector']]]
+  ['dufortfrankelsolve',['DufortFrankelSolve',['../class_dufort_frankel_solve.html#ae348a9dda0114799f73f65ad852c19f9',1,'DufortFrankelSolve::DufortFrankelSolve()'],['../class_dufort_frankel_solve.html#a2081c0668116f15316e61f95c86bd644',1,'DufortFrankelSolve::DufortFrankelSolve(double D, double dx, double dt, double L, double T, double Text, double Tint)']]]
 ];
