@@ -1,0 +1,142 @@
+\hypertarget{class_p_d_e_solve}{}\section{P\+D\+E\+Solve Class Reference}
+\label{class_p_d_e_solve}\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+
+
+{\ttfamily \#include $<$P\+D\+E\+Solve.\+h$>$}
+
+Inheritance diagram for P\+D\+E\+Solve\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.957747cm]{class_p_d_e_solve}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_d_e_solve_ae4ffb82f6502c303f1ffdb3831cc4f6d}{P\+D\+E\+Solve} ()
+\item 
+\hyperlink{class_p_d_e_solve_a1cfac8cfbb30ee0bd1c9100a5640f87f}{P\+D\+E\+Solve} (double D, double dx, double dt, double L, double T, double Text, double Tint)
+\item 
+virtual void \hyperlink{class_p_d_e_solve_a2fb309c3e7f35de2f639596f7fcb17cc}{solve} ()
+\item 
+\hyperlink{class_matrix}{Matrix} \hyperlink{class_p_d_e_solve_adece98ce0230132033efb28ecd629cb0}{get\+\_\+res} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_ae90f30578b9f059185d4553efe663021}\label{class_p_d_e_solve_ae90f30578b9f059185d4553efe663021}} 
+double {\bfseries Text}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_aa96724f2704b587422cca5db7a488a91}\label{class_p_d_e_solve_aa96724f2704b587422cca5db7a488a91}} 
+double {\bfseries Tint}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a29e1840d3920895a799f8fc9cc750100}\label{class_p_d_e_solve_a29e1840d3920895a799f8fc9cc750100}} 
+double {\bfseries D}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a837a7184ab181018e2e50144dfd37621}\label{class_p_d_e_solve_a837a7184ab181018e2e50144dfd37621}} 
+double {\bfseries dx}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a998c79622e229397bc988a98b730a8f8}\label{class_p_d_e_solve_a998c79622e229397bc988a98b730a8f8}} 
+double {\bfseries dt}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a3d1cc5eb7d044c7d1ac3a63186c9568b}\label{class_p_d_e_solve_a3d1cc5eb7d044c7d1ac3a63186c9568b}} 
+double {\bfseries L}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a6b1115026865cec58e0df85c1cdfae53}\label{class_p_d_e_solve_a6b1115026865cec58e0df85c1cdfae53}} 
+double {\bfseries T}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_aae3469330310d592e1985e60c94c9ffc}\label{class_p_d_e_solve_aae3469330310d592e1985e60c94c9ffc}} 
+double {\bfseries alpha}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_aa05249ea5bc3b88ba31ba55cc1001430}\label{class_p_d_e_solve_aa05249ea5bc3b88ba31ba55cc1001430}} 
+double {\bfseries r}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a43a38979eace61277158603f627aff37}\label{class_p_d_e_solve_a43a38979eace61277158603f627aff37}} 
+int {\bfseries nspace}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_ab35ddaf48c1881a7aa3f01dbbaf0445f}\label{class_p_d_e_solve_ab35ddaf48c1881a7aa3f01dbbaf0445f}} 
+int {\bfseries ntime}
+\item 
+\mbox{\Hypertarget{class_p_d_e_solve_a054590e2a2423ed31cc2cc9c23620701}\label{class_p_d_e_solve_a054590e2a2423ed31cc2cc9c23620701}} 
+\hyperlink{class_matrix}{Matrix} {\bfseries results}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Solver class for one-\/dimensional P\+DE solving. ~\newline
+ It has been designed only to solve one problem using differents . The problem is the evolution of the temperature  a wall as the function of time.
+
+The \hyperlink{class_p_d_e_solve}{P\+D\+E\+Solve} class provides\+: ~\newline
+-\/basic constructors for creating a Solver object with all initial  and data ~\newline
+-\/a solve virtual method which will differ if the scheme is  or explicit ~\newline
+-\/a method which returns the results of the problems 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_p_d_e_solve_ae4ffb82f6502c303f1ffdb3831cc4f6d}\label{class_p_d_e_solve_ae4ffb82f6502c303f1ffdb3831cc4f6d}} 
+\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}!P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}!P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+\subsubsection{\texorpdfstring{P\+D\+E\+Solve()}{PDESolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+D\+E\+Solve\+::\+P\+D\+E\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Initialize an empty solver. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_p_d_e_solve_a1cfac8cfbb30ee0bd1c9100a5640f87f}{P\+D\+E\+Solve(double D, double dx, double dt, double L, double T, double Text, double Tint)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_p_d_e_solve_a1cfac8cfbb30ee0bd1c9100a5640f87f}\label{class_p_d_e_solve_a1cfac8cfbb30ee0bd1c9100a5640f87f}} 
+\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}!P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}!P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+\subsubsection{\texorpdfstring{P\+D\+E\+Solve()}{PDESolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily P\+D\+E\+Solve\+::\+P\+D\+E\+Solve (\begin{DoxyParamCaption}\item[{double}]{D,  }\item[{double}]{dx,  }\item[{double}]{dt,  }\item[{double}]{L,  }\item[{double}]{T,  }\item[{double}]{Text,  }\item[{double}]{Tint }\end{DoxyParamCaption})}
+
+Alternate constructor. Should be used instead of the default one. Build a solver with all the problem data, values and initial conditions. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_p_d_e_solve_ae4ffb82f6502c303f1ffdb3831cc4f6d}{P\+D\+E\+Solve()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & (\char`\"{}value must be positive double\char`\"{}) \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em D} & double. Diffusivity of the wall \\
+\hline
+{\em dx} & double. Space step \\
+\hline
+{\em dt} & double. Time step \\
+\hline
+{\em L} & double. Thickness of the wall \\
+\hline
+{\em T} & double. Study total time \\
+\hline
+{\em Text} & double. External temperature \\
+\hline
+{\em Tint} & double. Initial temperature \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_p_d_e_solve_adece98ce0230132033efb28ecd629cb0}\label{class_p_d_e_solve_adece98ce0230132033efb28ecd629cb0}} 
+\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}!get\+\_\+res@{get\+\_\+res}}
+\index{get\+\_\+res@{get\+\_\+res}!P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+\subsubsection{\texorpdfstring{get\+\_\+res()}{get\_res()}}
+{\footnotesize\ttfamily \hyperlink{class_matrix}{Matrix} P\+D\+E\+Solve\+::get\+\_\+res (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Normal public get method get the results matrix \begin{DoxyReturn}{Returns}
+\hyperlink{class_matrix}{Matrix}. results matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_e_solve_a2fb309c3e7f35de2f639596f7fcb17cc}\label{class_p_d_e_solve_a2fb309c3e7f35de2f639596f7fcb17cc}} 
+\index{P\+D\+E\+Solve@{P\+D\+E\+Solve}!solve@{solve}}
+\index{solve@{solve}!P\+D\+E\+Solve@{P\+D\+E\+Solve}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily virtual void P\+D\+E\+Solve\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Virtual solve methods solves the problem and writes the results in a matrix 
+
+Reimplemented in \hyperlink{class_p_d_e_implicit_ace06b1a56c2766ca8d4bc95669d21d12}{P\+D\+E\+Implicit}, and \hyperlink{class_p_d_e_explicit_a78282717c8230e9be65599865865e0c7}{P\+D\+E\+Explicit}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+P\+D\+E\+Solve.\+h\item 
+P\+D\+E\+Solve.\+cpp\end{DoxyCompactItemize}

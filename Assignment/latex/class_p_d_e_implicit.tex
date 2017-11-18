@@ -1,0 +1,71 @@
+\hypertarget{class_p_d_e_implicit}{}\section{P\+D\+E\+Implicit Class Reference}
+\label{class_p_d_e_implicit}\index{P\+D\+E\+Implicit@{P\+D\+E\+Implicit}}
+Inheritance diagram for P\+D\+E\+Implicit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_p_d_e_implicit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a95e1d8572ae2356554f25633391f02f2}\label{class_p_d_e_implicit_a95e1d8572ae2356554f25633391f02f2}} 
+{\bfseries P\+D\+E\+Implicit} (double D, double dx, double dt, double L, double T, double Text, double Tint)
+\item 
+void \hyperlink{class_p_d_e_implicit_ace06b1a56c2766ca8d4bc95669d21d12}{solve} ()
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a60980fe1e316329ab95ad179fce5a88b}\label{class_p_d_e_implicit_a60980fe1e316329ab95ad179fce5a88b}} 
+virtual void {\bfseries advance} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_afa24d3aa2a58330c693c351f917fdaa7}\label{class_p_d_e_implicit_afa24d3aa2a58330c693c351f917fdaa7}} 
+void {\bfseries lu\+\_\+fact} ()
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_af27dc1837e1e1b6f2e930f35441402de}\label{class_p_d_e_implicit_af27dc1837e1e1b6f2e930f35441402de}} 
+void {\bfseries lu\+\_\+solve} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a43137099658d7cfa6d40f0c5d526c50b}\label{class_p_d_e_implicit_a43137099658d7cfa6d40f0c5d526c50b}} 
+\hyperlink{class_matrix}{Matrix} {\bfseries A}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a067558d8aa140e0826c66a890a05b63b}\label{class_p_d_e_implicit_a067558d8aa140e0826c66a890a05b63b}} 
+\hyperlink{class_matrix}{Matrix} {\bfseries E}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a3cf6ba9c1ae64074e79328d3ecfe1f7d}\label{class_p_d_e_implicit_a3cf6ba9c1ae64074e79328d3ecfe1f7d}} 
+\hyperlink{class_matrix}{Matrix} {\bfseries L}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a3c1dabd8717d8c560fa69d6838952351}\label{class_p_d_e_implicit_a3c1dabd8717d8c560fa69d6838952351}} 
+\hyperlink{class_matrix}{Matrix} {\bfseries U}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a787825cb4daaca9b90787e612e8aa5fa}\label{class_p_d_e_implicit_a787825cb4daaca9b90787e612e8aa5fa}} 
+vector$<$ double $>$ {\bfseries B}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a5f6932af52db54b561af048bad266d52}\label{class_p_d_e_implicit_a5f6932af52db54b561af048bad266d52}} 
+vector$<$ double $>$ {\bfseries X}
+\item 
+\mbox{\Hypertarget{class_p_d_e_implicit_a977f4b0e57f031fb7e1a0dd13445822d}\label{class_p_d_e_implicit_a977f4b0e57f031fb7e1a0dd13445822d}} 
+double {\bfseries C}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_p_d_e_implicit_ace06b1a56c2766ca8d4bc95669d21d12}\label{class_p_d_e_implicit_ace06b1a56c2766ca8d4bc95669d21d12}} 
+\index{P\+D\+E\+Implicit@{P\+D\+E\+Implicit}!solve@{solve}}
+\index{solve@{solve}!P\+D\+E\+Implicit@{P\+D\+E\+Implicit}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily void P\+D\+E\+Implicit\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Virtual solve methods solves the problem and writes the results in a matrix 
+
+Reimplemented from \hyperlink{class_p_d_e_solve_a2fb309c3e7f35de2f639596f7fcb17cc}{P\+D\+E\+Solve}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+P\+D\+E\+Implicit.\+h\item 
+P\+D\+E\+Implicit.\+cpp\end{DoxyCompactItemize}
