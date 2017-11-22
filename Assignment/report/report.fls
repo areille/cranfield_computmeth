@@ -123,6 +123,9 @@ OUTPUT report.lof
 INPUT report.lot
 INPUT report.lot
 OUTPUT report.lot
+INPUT report.lol
+INPUT report.lol
+OUTPUT report.lol
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
