@@ -6,6 +6,10 @@
 \usepackage{graphicx} % import images
 \usepackage{float} % floating imgs
 \usepackage{subcaption} % several figures on one line
+\usepackage{listings} %source code listing
+\lstset{
+    basicstyle=\ttfamily\tiny
+}
 \graphicspath{ {ressources/} }
 
 \title{Computational Methods \& C++ Assignment}
@@ -517,5 +521,19 @@
                     \includegraphics[width=\textwidth]{las-3.png}
                     \caption{Laasonen scheme with $\Delta t$ = 0,05}
                 \end{figure}
-        \subsection{Code sample}
+                \subsection{Code sample}
+                \lstinputlisting[language=C++, caption=PDESolve class header]{../PDESolve.h}
+                \lstinputlisting[language=C++, caption=PDESolve class code]{../PDESolve.cpp}
+                \lstinputlisting[language=C++, caption=PDEImplicit class header]{../PDEImplicit.h}
+                \lstinputlisting[language=C++, caption=PDEImplicit class code]{../PDEImplicit.cpp}
+                \lstinputlisting[language=C++, caption=PDEExplicit class header]{../PDEExplicit.h}
+                \lstinputlisting[language=C++, caption=PDEExplicit class code]{../PDEExplicit.cpp}
+                \lstinputlisting[language=C++, caption=DufortFrankelSolve class header]{../DufortFrankelSolve.h}
+                \lstinputlisting[language=C++, caption=DufortFrankelSolve class code]{../DufortFrankelSolve.cpp}
+                \lstinputlisting[language=C++, caption=RichardsonSolve class header]{../RichardsonSolve.h}
+                \lstinputlisting[language=C++, caption=RichardsonSolve class code]{../RichardsonSolve.cpp}
+                \lstinputlisting[language=C++, caption=LaasonenSolve class header]{../LaasonenSolve.h}
+                \lstinputlisting[language=C++, caption=LaasonenSolve class code]{../LaasonenSolve.cpp}
+                \lstinputlisting[language=C++, caption=CrankNicholsonSolve class header]{../CrankNicholsonSolve.h}
+                \lstinputlisting[language=C++, caption=CrankNicholsonSolve class code]{../CrankNicholsonSolve.cpp}
     \end{document}

@@ -1,7 +1,7 @@
 #include "PDEImplicit.h"
 
 /**
- * A subclass of PDE Implicit solver, specialized for Richardson scheme.
+ * A subclass of PDE Implicit solver, specialized for Crank-Nicholson scheme.
  * 
  * The Crank Nicholson class provides:
  * \n-basic constructors for creating a Solver object with all initial
